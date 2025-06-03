@@ -27,6 +27,11 @@ function Categories({
   const navigate = useNavigate();
   const visibleCards = useResponsiveCards(responsive, visibleCount);
 
+  // Funzione per ottenere le prime 10 parole
+  const getFirst10Words = (text) => {
+    return text.split(' ').slice(0, 10).join(' ') + '...';
+  };
+
   // Genera lista filtrata, ordinata e limitata
   useEffect(() => {
     const getFilteredProducts = () => {
@@ -150,7 +155,7 @@ function Categories({
                 ) : (
                   <p className="text-sm font-normal">${product.price}</p>
                 )}
-                <p>{product.description}</p>
+                <p className="text-sm text-white">{getFirst10Words(product.description)}</p>
                 <div className="card-actions">
                   <button className="btn btn-primary" onClick={() => handleBuyNow(product)}>Buy Now</button>
                 </div>
@@ -203,9 +208,9 @@ function Categories({
               ) : (
                 <p className="text-sm font-normal">${slide.price}</p>
               )}
-              <p>{slide.description}</p>
+              <p className="text-sm text-white">{getFirst10Words(slide.description)}</p>
               <div className="card-actions">
-                <button className="btn btn-primary " onClick={() => handleBuyNow(slide)}>Buy Now</button>
+                <button className="btn btn-primary" onClick={() => handleBuyNow(slide)}>Buy Now</button>
               </div>
             </div>
           </div>

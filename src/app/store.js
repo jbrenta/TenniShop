@@ -8,7 +8,7 @@ import { SideBarReducer } from '../components/Slidebar/SideBarSlice';
 import { ProdottiReducer } from '../pages/Prodotti/ProdottiSlice';
 import { ProductDetailsReducer } from '../components/ProductsDetails/ProductDetailsSlice';
 import { SingleProductReducer } from '../components/SingleProduct/SingleProductSlice';
-import { CartReducer } from '../components/Cart/CartSlice';
+import cartReducer from '../components/Cart/CartSlice';
 
 // Configurazione di redux-persist
 const persistConfig = {
@@ -25,7 +25,7 @@ const rootReducer = combineReducers({
   productDetails: ProductDetailsReducer,
   prodotti: ProdottiReducer,
   singleProduct: SingleProductReducer,
-  cart: CartReducer,
+  cart: cartReducer,
 });
 
 // Applica redux-persist al rootReducer

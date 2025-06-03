@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { moveToOne, moveToTwo, moveToThree, showSearch, setSearchTerm } from "./NavbarSlice";
 import { showSideBar } from "../Slidebar/SideBarSlice";
-import { showCart } from "../Cart/CartSlice";
+import { openCart } from "../Cart/CartSlice";
 import { hidden } from "../../pages/Home/HomeSlice";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { products } from "../../data/products";
@@ -101,7 +101,7 @@ function Navbar() {
           </svg>
         </button>
         <div className="flex-1">
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <a className="btn btn-ghost text-xl">TenniShop</a>
         </div>
         {tab === 1 && (
           <div className="hidden md:flex justify-center w-full my-2">
@@ -123,7 +123,7 @@ function Navbar() {
           <div className="flex items-center gap-2">
             <button
               className="btn btn-ghost btn-circle"
-              onClick={() => dispatch(showCart())}
+              onClick={() => dispatch(openCart())}
             >
               <div className="indicator">
                 <svg
@@ -188,7 +188,7 @@ function Navbar() {
           <a
             role="tab"
             onClick={() => dispatch(moveToOne())}
-            className={`tab ${tab === 1 ? "tab-active" : ""}`}
+            className={`tab ${tab === 1 ? "tab-active" : ""} text-white`}
           >
             Home
           </a>
@@ -197,7 +197,7 @@ function Navbar() {
           <a
             role="tab"
             onClick={() => dispatch(moveToTwo())}
-            className={`tab ${tab === 2 ? "tab-active" : ""}`}
+            className={`tab ${tab === 2 ? "tab-active" : ""} text-white`}
           >
             Prodotti
           </a>
@@ -205,7 +205,7 @@ function Navbar() {
         <a
           role="tab"
           onClick={() => dispatch(moveToThree())}
-          className={`tab ${tab === 3 ? "tab-active" : ""}`}
+          className={`tab ${tab === 3 ? "tab-active" : ""} text-white`}
         >
           Info
         </a>

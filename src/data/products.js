@@ -1,4 +1,3 @@
-
 export const products = [
   {
     "id": "rac-1",
@@ -10,7 +9,7 @@ export const products = [
     "peso": 300,
     "promo": false,
     "image": "assets/imgprodotti/racchette/head-boom.jpg",
-    "description": "Racchetta 1 - prodotto di alta qualit\u00e0 pensato per il tennis moderno."
+    "description": "La Head Boom rappresenta l'evoluzione del tennis moderno, con un telaio progettato per offrire il perfetto equilibrio tra potenza e controllo. Il piatto corde ampliato del 16% rispetto ai modelli precedenti garantisce una maggiore area di impatto efficace, riducendo gli errori nei colpi decentrati.\n\nLa tecnologia Graphene 360+ assicura una straordinaria stabilità torsionale e una risposta energetica superiore, mentre la costruzione in grafite di alta qualità mantiene il peso ottimale di 300g per un handling preciso.\n\nIl bilanciamento sul piatto corde favorisce un gioco aggressivo da fondo campo, permettendo di imprimere maggiore spin alla palla. La rigidità calibrata del telaio (RA 66) offre un eccellente mix di comfort e prestazioni.\n\nParticolarmente adatta a giocatori di livello intermedio-avanzato che cercano una racchetta versatile per migliorare il proprio gioco. Il pattern di corde 16/19 aumenta l'effetto e il controllo su ogni colpo."
   },
   {
     "id": "rac-2",
@@ -22,7 +21,7 @@ export const products = [
     "peso": 300,
     "promo": false,
     "image": "assets/imgprodotti/racchette/head-gravity.jpg",
-    "description": "Racchetta 2 - prodotto di alta qualit\u00e0 pensato per il tennis moderno."
+    "description": "La Head Gravity ridefinisce gli standard di comfort nel tennis moderno grazie alla sua innovativa struttura Graphene 360+. Il telaio, caratterizzato da una sezione più spessa nella zona delle ore 3 e 9, offre una stabilità eccezionale nei colpi decentrati.\n\nLa tecnologia Flip Technology integrata nel cuore della racchetta permette una deformazione controllata del telaio durante l'impatto, garantendo una sensazione di morbidezza unica senza sacrificare la potenza.\n\nIl peso di 300g è distribuito strategicamente per massimizzare la maneggevolezza, mentre il bilanciamento sul piatto corde favorisce un gioco preciso e controllato. La forma della testa più rotonda rispetto ad altri modelli Head aumenta la tolleranza agli errori.\n\nIl pattern di corde 16/20 offre un controllo superiore, ideale per giocatori che prediligono colpi piatti e precisi. La finitura opaca premium non solo è esteticamente accattivante ma riduce anche i riflessi durante il gioco.\n\nParticolarmente consigliata per giocatori di club che cercano il massimo comfort senza rinunciare alle prestazioni di alto livello."
   },
   {
     "id": "rac-3",
@@ -34,7 +33,7 @@ export const products = [
     "peso": 280,
     "promo": false,
     "image": "assets/imgprodotti/racchette/head-speed.jpg",
-    "description": "Racchetta 3 - prodotto di alta qualit\u00e0 pensato per il tennis moderno."
+    "description": "La Head Speed, scelta da Novak Djokovic, è l'incarnazione della velocità nel tennis moderno. Con un peso di soli 280g, questa racchetta è progettata per giocatori che privilegiano la rapidità degli scambi e la precisione dei colpi.\n\nIl bilanciamento neutro offre una maneggevolezza eccezionale, permettendo rapidi cambi di direzione e una risposta immediata in ogni situazione di gioco. La tecnologia Graphene 360+ assicura una distribuzione ottimale dell'energia su tutto il telaio.\n\nIl piatto corde di medie dimensioni (100 sq.in.) garantisce il perfetto equilibrio tra controllo e potenza, mentre il pattern di corde 16/19 favorisce la generazione di spin e effetti.\n\nLa struttura aerodinamica del telaio riduce la resistenza all'aria durante lo swing, permettendo una maggiore accelerazione della racchetta. La rigidità calibrata (RA 70) offre un feedback immediato su ogni colpo.\n\nIdeale per giocatori aggressivi che cercano una racchetta reattiva per un gioco veloce e dinamico. La colorazione blu elettrico riflette perfettamente il carattere performante di questo modello."
   },
   {
     "id": "rac-4",
@@ -46,7 +45,7 @@ export const products = [
     "peso": 290,
     "promo": false,
     "image": "assets/imgprodotti/racchette/head-radical.jpg",
-    "description": "Racchetta 4 - prodotto di alta qualit\u00e0 pensato per il tennis moderno."
+    "description": "La Head Radical, con il suo DNA rivoluzionario, rappresenta l'evoluzione di un'icona del tennis. Il bilanciamento verso il manico, combinato con un peso di 290g, offre un controllo straordinario in ogni fase del gioco.\n\nLa tecnologia Graphene 360+ è stata ottimizzata per questa versione, introducendo spirali in grafite che aumentano la stabilità torsionale e riducono le vibrazioni indesiderate. Il telaio presenta una geometria variabile che massimizza la potenza nei punti strategici.\n\nIl pattern di corde 16/19 e il piatto corde da 98 sq.in. creano il mix perfetto per un gioco versatile, permettendo sia colpi potenti che tocchi delicati. La flessibilità del telaio (RA 63) garantisce un comfort superiore durante lunghe sessioni di gioco.\n\nLa distribuzione del peso verso il manico favorisce un maggiore controllo nei colpi difensivi e una precisione superiore nel gioco di volo. La verniciatura premium non solo offre un look accattivante ma aumenta anche la durabilità del telaio.\n\nParticolarmente adatta a giocatori tecnici che prediligono il controllo e la precisione. Il design iconico della serie Radical si evolve mantenendo l'essenza che l'ha resa famosa."
   },
   {
     "id": "rac-5",
@@ -58,7 +57,7 @@ export const products = [
     "peso": 310,
     "promo": false,
     "image": "assets/imgprodotti/racchette/head-prestige.jpg",
-    "description": "Racchetta 5 - prodotto di alta qualit\u00e0 pensato per il tennis moderno."
+    "description": "La Head Prestige incarna l'eccellenza del tennis classico con un tocco di modernità. Il peso di 310g e il bilanciamento neutro la rendono una racchetta per puristi che cercano il massimo controllo e precisione.\n\nIl piatto corde più piccolo (95 sq.in.) rispetto ad altri modelli Head offre un feedback eccezionale su ogni colpo, permettendo ai giocatori esperti di sentire esattamente dove la palla impatta le corde. La tecnologia Graphene 360+ è stata finemente calibrata per questo modello pro.\n\nIl pattern di corde denso 18/20 garantisce un controllo superiore e una traiettoria più piatta della palla, ideale per giocatori che prediligono colpi penetranti e precisi. La rigidità contenuta del telaio (RA 61) offre una sensibilità impareggiabile.\n\nLa costruzione tradizionale del telaio è stata arricchita con tecnologie moderne che ne aumentano la stabilità e la durata nel tempo. Il bilanciamento neutro permette di gestire al meglio sia il gioco da fondo campo che le volée.\n\nQuesta racchetta è destinata a giocatori esperti che apprezzano il controllo totale e la precisione chirurgica nei loro colpi. La finitura elegante in nero opaco sottolinea il carattere premium di questo modello storico."
   },
   {
     "id": "rac-6",
@@ -70,7 +69,7 @@ export const products = [
     "bilancio": "bilanciato",
     "peso": 300,
     "image": "assets/imgprodotti/racchette/babolat-pure-drive.jpg",
-    "description": "Racchetta 6 - prodotto di alta qualit\u00e0 pensato per il tennis moderno."
+    "description": "La Babolat Pure Drive è sinonimo di potenza nel tennis moderno. Con il suo telaio innovativo da 300g e bilanciamento neutro, questa racchetta offre un mix esplosivo di potenza e controllo che l'ha resa una delle più popolari al mondo.\n\nLa tecnologia FSI Power, con il pattern di corde ottimizzato, aumenta la potenza su ogni colpo mantenendo un eccellente controllo. Il sistema SWX Pure Feel integrato nel telaio riduce le vibrazioni indesiderate per un comfort superiore.\n\nIl piatto corde da 100 sq.in. offre un'ampia sweet spot, perdonando i colpi non perfettamente centrati, mentre la tecnologia HTR System migliora la stabilità torsionale per una maggiore precisione.\n\nLa struttura aerodinamica del telaio, combinata con la tecnologia Cortex Pure Feel, permette swing veloci mantenendo un eccellente comfort. Il bilanciamento calibrato la rende perfetta sia per il gioco da fondo campo che per quello a rete.\n\nIdeale per giocatori di livello intermedio-avanzato che cercano una racchetta potente ma controllabile. Il caratteristico colore blu elettrico è diventato un'icona nel mondo del tennis."
   },
   {
     "id": "rac-7",
@@ -82,7 +81,7 @@ export const products = [
     "bilancio": "bilanciato",
     "peso": 300,
     "image": "assets/imgprodotti/racchette/babolat-pure-aero.jpg",
-    "description": "Racchetta 7 - prodotto di alta qualit\u00e0 pensato per il tennis moderno."
+    "description": "La Babolat Pure Aero, resa celebre da Rafael Nadal, è progettata per massimizzare la rotazione della palla. Il telaio aerodinamico da 300g incorpora la rivoluzionaria tecnologia Aero Modular 3, che riduce la resistenza all'aria del 11% rispetto al modello precedente.\n\nLa tecnologia FSI Spin, con il pattern di corde aperto e la forma dei fori ottimizzata, permette di imprimere un effetto superiore alla palla. Il sistema Cortex Pure Feel di ultima generazione filtra le vibrazioni nocive mantenendo le sensazioni di gioco.\n\nIl bilanciamento neutro e il piatto corde da 100 sq.in. offrono il perfetto equilibrio tra potenza e maneggevolezza. La struttura del telaio è stata rinforzata nei punti chiave per una maggiore stabilità durante i colpi potenti.\n\nLa tecnologia Carbon Ply Stabilizer aumenta la precisione nei colpi potenti, mentre il nuovo design aerodinamico permette di generare maggiore velocità della racchetta durante lo swing.\n\nPerfetta per giocatori aggressivi che basano il loro gioco su potenza e spin. L'iconico colore giallo/nero è immediatamente riconoscibile sui campi di tutto il mondo."
   },
   {
     "id": "rac-8",
@@ -94,7 +93,7 @@ export const products = [
     "bilancio": "piattocorde",
     "peso": 290,
     "image": "assets/imgprodotti/racchette/babolat-pure-strike.jpg",
-    "description": "Racchetta 8 - prodotto di alta qualit\u00e0 pensato per il tennis moderno."
+    "description": "La Babolat Pure Strike rappresenta la precisione chirurgica nel tennis moderno. Con un peso di 290g e un bilanciamento verso il piatto corde, questa racchetta è progettata per giocatori che privilegiano il controllo e la sensibilità.\n\nIl telaio ibrido quadrato-ellittico offre una rigidità controllata che permette di sentire perfettamente la palla su ogni impatto. La tecnologia Control Frame Technology aumenta la precisione nei colpi aggressivi.\n\nIl pattern di corde 16/19 e il piatto corde da 98 sq.in. forniscono il mix perfetto tra controllo e spin. La struttura del telaio utilizza la tecnologia C2 Pure Feel per un feedback ottimale e comfort superiore.\n\nIl bilanciamento verso il piatto corde favorisce un gioco aggressivo e preciso, permettendo di comandare gli scambi con autorità. La stabilità del telaio è stata migliorata grazie alla tecnologia Pure Feel Technology.\n\nIdeale per giocatori di stile che cercano il massimo controllo senza sacrificare la potenza. Il design elegante in bianco/rosso riflette la precisione e l'efficacia di questa racchetta."
   },
   {
     "id": "rac-9",
@@ -106,7 +105,7 @@ export const products = [
     "bilancio": "piattocorde",
     "peso": 280,
     "image": "assets/imgprodotti/racchette/babolat-boost-drive.jpg",
-    "description": "Racchetta 9 - prodotto di alta qualit\u00e0 pensato per il tennis moderno."
+    "description": "La Babolat Boost Drive è la porta d'accesso perfetta al tennis di qualità. Con un peso contenuto di 280g e un bilanciamento verso il piatto corde, questa racchetta è ideale per giocatori in crescita o principianti evoluti.\n\nIl telaio oversize da 105 sq.in. offre un'area di impatto maggiorata che perdona i colpi decentrati, mentre la tecnologia Frame Graphite Composite garantisce durata e prestazioni costanti.\n\nIl pattern di corde 16/19 permette di generare un buon spin naturale, aiutando i giocatori a sviluppare un gioco moderno. La costruzione del telaio è ottimizzata per ridurre le vibrazioni e aumentare il comfort.\n\nIl bilanciamento verso il piatto corde aiuta a generare potenza con minor sforzo, mentre la maneggevolezza del telaio permette di sviluppare una tecnica corretta sin dall'inizio.\n\nPerfetta per chi si avvicina al tennis o vuole migliorare il proprio gioco con una racchetta di qualità a un prezzo accessibile. Il design moderno e accattivante la rende attraente per giocatori di tutte le età."
   },
   {
     "id": "rac-10",
@@ -118,7 +117,7 @@ export const products = [
     "bilancio": "manico",
     "peso": 300,
     "image": "assets/imgprodotti/racchette/babolat-falcon.jpg",
-    "description": "Racchetta 10 - prodotto di alta qualit\u00e0 pensato per il tennis moderno."
+    "description": "La Babolat Falcon è progettata per offrire il massimo controllo nel gioco moderno. Con un peso di 300g e un bilanciamento verso il manico, questa racchetta permette un controllo superiore in ogni situazione di gioco.\n\nIl telaio mid-plus da 98 sq.in. utilizza la tecnologia High Modulus Graphite per una stabilità eccezionale durante gli scambi potenti. Il bilanciamento verso il manico favorisce un maggior controllo nei colpi difensivi.\n\nIl pattern di corde denso 18/20 offre un controllo preciso sulla direzione della palla, ideale per giocatori che prediligono colpi piatti e penetranti. La costruzione del telaio è ottimizzata per ridurre le vibrazioni.\n\nLa tecnologia X-tra Feel System integrata nel manico migliora le sensazioni su ogni colpo, mentre la rigidità calibrata del telaio offre il giusto mix tra potenza e controllo.\n\nParticolarmente adatta a giocatori di livello intermedio-avanzato che cercano una racchetta controllabile e precisa. Il design sobrio ed elegante sottolinea il carattere tecnico di questo modello."
   },
   {
     id: "rac-11",
@@ -130,7 +129,7 @@ export const products = [
     bilancio: "bilanciato",
     peso: 290,
     image: "assets/imgprodotti/racchette/head-boom-MP.jpg",
-    description: "Racchetta 1 - prodotto di alta qualità pensato per il tennis moderno."
+    description: "La Head Boom MP è l'evoluzione perfetta per il giocatore moderno. Con un peso di 290g e un bilanciamento neutro, questa versione MP (Mid Plus) offre un eccellente mix di maneggevolezza e stabilità.\n\nLa tecnologia Graphene 360+ è stata ottimizzata per questo modello, offrendo una risposta energetica superiore e una maggiore stabilità torsionale. Il piatto corde da 100 sq.in. fornisce un ottimo compromesso tra potenza e controllo.\n\nIl pattern di corde 16/19 permette di generare un ottimo spin, mentre la struttura del telaio è stata rinforzata nei punti strategici per aumentare la stabilità durante i colpi potenti.\n\nLa tecnologia Auxetic Construction migliora la sensibilità e il comfort su ogni impatto, rendendo questa racchetta particolarmente confortevole durante lunghe sessioni di gioco.\n\nIdeale per giocatori di livello intermedio che cercano una racchetta versatile e facile da usare. Il design moderno e la costruzione di qualità la rendono una scelta eccellente per chi vuole migliorare il proprio gioco."
   },
   {
     id: "rac-12",
@@ -142,7 +141,7 @@ export const products = [
     bilancio: "manico",
     peso: 310,
     image: "assets/imgprodotti/racchette/wilson-burn.jpg",
-    description: "Racchetta 2 - prodotto di alta qualità pensato per il tennis moderno."
+    description: "La Wilson Burn è progettata per i giocatori che amano il gioco aggressivo da fondo campo. Con un peso di 310g e un bilanciamento verso il manico, questa racchetta offre un controllo eccezionale nei colpi potenti.\n\nLa tecnologia Parallel Drilling aumenta la dimensione dello sweet spot e migliora la risposta elastica delle corde, mentre il sistema Power Rib ottimizza la rigidità del telaio nei punti chiave.\n\nIl pattern di corde 16/19 e il piatto corde da 100 sq.in. permettono di generare potenza e spin in abbondanza. La costruzione in High Performance Carbon garantisce durata e prestazioni costanti nel tempo.\n\nIl bilanciamento verso il manico offre un controllo superiore nei colpi difensivi e una maggiore stabilità durante gli scambi potenti. La tecnologia X2 Ergo Handle migliora il comfort della presa.\n\nParticolarmente adatta a giocatori di livello avanzato che cercano una racchetta per un gioco aggressivo e potente. La colorazione aggressiva riflette il carattere performante di questo modello."
   },
   {
     id: "rac-13",
@@ -154,7 +153,7 @@ export const products = [
     bilancio: "bilanciato",
     peso: 285,
     image: "assets/imgprodotti/racchette/wilson-shift.webp",
-    description: "Racchetta 3 - prodotto di alta qualità pensato per il tennis moderno."
+    description: "La Wilson Shift rappresenta l'innovazione nel tennis moderno. Con un peso di 285g e un bilanciamento neutro, questa racchetta è progettata per adattarsi a diversi stili di gioco.\n\nLa tecnologia Shift Construction permette al telaio di adattarsi dinamicamente durante il gioco, offrendo più potenza nei colpi potenti e maggior controllo nei colpi di tocco.\n\nIl piatto corde da 100 sq.in. e il pattern 16/19 offrono un ottimo mix di potenza e spin. La struttura del telaio utilizza la tecnologia Carbon Fiber Composition per una maggiore stabilità.\n\nIl bilanciamento neutro rende questa racchetta estremamente versatile, adatta sia al gioco da fondo campo che al serve&volley. La tecnologia Comfort Bridge riduce le vibrazioni indesiderate.\n\nPerfetta per giocatori di livello intermedio che cercano una racchetta adattabile a diversi stili di gioco. Il design innovativo riflette la natura versatile di questo modello."
   },
   {
     id: "rac-14",
@@ -166,7 +165,7 @@ export const products = [
     bilancio: "piattocorde",
     peso: 300,
     image: "assets/imgprodotti/racchette/wilson-roger-federer.jpg",
-    description: "Racchetta 4 - prodotto di alta qualità pensato per il tennis moderno."
+    description: "La Wilson Roger Federer Pro Staff è l'incarnazione dell'eleganza nel tennis. Sviluppata in collaborazione con il maestro svizzero, questa racchetta da 300g con bilanciamento verso il piatto corde offre precisione e controllo impareggiabili.\n\nIl telaio Braided Graphite Construction fornisce sensazioni pure e feedback preciso su ogni colpo. Il piatto corde da 97 sq.in. e il pattern 16/19 permettono un controllo millimetrico sulla palla.\n\nLa tecnologia Wilson Perimeter Weighting System aumenta la stabilità e la precisione nei colpi decentrati. La costruzione del telaio è ottimizzata per offrire la massima sensibilità.\n\nIl bilanciamento verso il piatto corde favorisce un gioco aggressivo e preciso, permettendo di comandare gli scambi con autorità. La finitura elegante in nero opaco riflette lo stile senza tempo di Federer.\n\nIdeale per giocatori di livello avanzato che cercano una racchetta che privilegia il controllo e la precisione. Il design classico e raffinato la rende un'icona senza tempo."
   },
   {
     id: "rac-15",
@@ -178,7 +177,7 @@ export const products = [
     bilancio: "manico",
     peso: 310,
     image: "assets/imgprodotti/racchette/wilson-roland-garros.jpg",
-    description: "Racchetta 5 - prodotto di alta qualità pensato per il tennis moderno."
+    description: "La Wilson Roland Garros Edition celebra il prestigioso torneo parigino con una racchetta che eccelle sulla terra rossa. Il peso di 310g e il bilanciamento verso il manico la rendono perfetta per il gioco di controllo tipico del clay court.\n\nLa tecnologia Spin Effect con pattern di corde ottimizzato permette di generare il top spin necessario per il gioco sulla terra. Il telaio utilizza la Power Bridge Technology per una maggiore stabilità nei colpi potenti.\n\nIl piatto corde da 98 sq.in. e il pattern 16/20 offrono un controllo superiore, ideale per lunghi scambi da fondo campo. La costruzione in Premium Carbon Fiber garantisce durata e prestazioni costanti.\n\nIl bilanciamento verso il manico favorisce il controllo nei colpi difensivi e una maggiore precisione nel gioco di scambio. I colori caratteristici del Roland Garros rendono questa racchetta immediatamente riconoscibile.\n\nParticolarmente adatta a giocatori che prediligono il gioco sulla terra battuta e cercano una racchetta che privilegia il controllo e la precisione. L'edizione limitata la rende un pezzo da collezione."
   },
   {
     "id": "mag-1",

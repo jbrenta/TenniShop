@@ -3,6 +3,11 @@ import React from 'react';
 const ProductCard = ({ product, onBuyNow, className = '' }) => {
   if (!product) return null;
 
+  // Funzione per ottenere le prime 10 parole
+  const getFirst10Words = (text) => {
+    return text.split(' ').slice(0, 10).join(' ') + '...';
+  };
+
   return (
     <div className={`card bg-base-100 w-72 shadow-2xl glass ${className}`}>
       <figure className="px-10 pt-10 h-40 flex items-center justify-center">
@@ -29,7 +34,7 @@ const ProductCard = ({ product, onBuyNow, className = '' }) => {
         ) : (
           <p className="text-sm font-normal">${product.price}</p>
         )}
-        <p>{product.description}</p>
+        <p className="text-sm text-gray-600">{getFirst10Words(product.description)}</p>
         <div className="card-actions">
           <button 
             className="btn btn-primary"

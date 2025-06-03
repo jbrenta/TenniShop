@@ -29,7 +29,7 @@ return (
                   <div className='flex flex-wrap gap-5 mt-5 min-[471px]:mx-20 min-[632px]:mx-28 sm:mx-auto justify-center'>
                     <div className="card bg-base-100 w-36 sm:w-40 md:w-40 lg:w-52 xl:w-72 hover:scale-110 hover:opacity-75 transition-transform duration-300 ease-in-out shadow-sm cursor-pointer">
                       <div className="card-body p-0">
-                        <h2 className="card-title p-2 border-2 border-b-0 rounded-t-lg border-cyan-500">Racchette</h2>
+                        <h2 className="card-title p-2 border-2 border-b-2 rounded-t-lg text-black bg-white">Racchette</h2>
                       </div>
                       <figure>
                         <img src={racchette} alt="Shoes" />
@@ -37,7 +37,7 @@ return (
                     </div>
                     <div className="card bg-base-100 w-36 sm:w-40 md:w-40 lg:w-52 xl:w-72 hover:scale-110 hover:opacity-75 transition-transform duration-300 ease-in-out shadow-sm cursor-pointer">
                       <div className="card-body p-0">
-                        <h2 className="card-title p-2 border-2 border-b-0 rounded-t-lg border-cyan-500">Abbigliamento</h2>
+                        <h2 className="card-title p-2 border-2 border-b-2 rounded-t-lg text-black bg-white">Abbigliamento</h2>
                       </div>
                       <figure>
                         <img src={maglia} alt="Shoes" />
@@ -45,7 +45,7 @@ return (
                     </div>
                     <div className="card bg-base-100 w-36 sm:w-40 md:w-40 lg:w-52 xl:w-72 hover:scale-110 hover:opacity-75 transition-transform duration-300 ease-in-out shadow-sm cursor-pointer">
                       <div className="card-body p-0">
-                        <h2 className="card-title p-2 border-2 border-b-0 rounded-t-lg border-cyan-500">Scarpe</h2>
+                        <h2 className="card-title p-2 border-2 border-b-2 rounded-t-lg text-black bg-white">Scarpe</h2>
                       </div>
                       <figure>
                         <img src={scarpa} alt="Shoes" />
@@ -53,7 +53,7 @@ return (
                     </div>
                     <div className="card bg-base-100 w-36 sm:w-40 md:w-40 lg:w-52 xl:w-72 hover:scale-110 hover:opacity-75 transition-transform duration-300 ease-in-out shadow-sm cursor-pointer">
                       <div className="card-body p-0">
-                        <h2 className="card-title p-2 border-2 border-b-0 rounded-t-lg border-cyan-500">Borsoni</h2>
+                        <h2 className="card-title p-2 border-2 border-b-2 rounded-t-lg text-black bg-white">Borsoni</h2>
                       </div>
                       <figure>
                         <img src={borsone} alt="Shoes" />

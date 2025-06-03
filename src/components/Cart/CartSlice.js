@@ -1,49 +1,54 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const CartSlice = createSlice({
-    name: "Cart",
-    initialState: {
-        items: [],
-        visible: false,
-        total: 0
-    },
+const initialState = {
+    items: [],
+    isOpen: false,
+};
+
+export const cartSlice = createSlice({
+    name: "cart",
+    initialState,
     reducers: {
         addToCart: (state, action) => {
-            const existingItem = state.items.find(item => item.id === action.payload.id);
+            const newItem = action.payload;
+            const existingItem = state.items.find(item => item.id === newItem.id);
+            
             if (existingItem) {
-                existingItem.quantity += 1;
+                existingItem.quantity = Math.min(9, existingItem.quantity + newItem.quantity);
             } else {
-                state.items.push({ ...action.payload, quantity: 1 });
+                state.items.push(newItem);
             }
-            state.total = state.items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            state.isOpen = true;
         },
         removeFromCart: (state, action) => {
             state.items = state.items.filter(item => item.id !== action.payload);
-            state.total = state.items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
         },
         updateQuantity: (state, action) => {
             const { id, quantity } = action.payload;
             const item = state.items.find(item => item.id === id);
             if (item) {
-                item.quantity = Math.max(0, quantity);
-                if (item.quantity === 0) {
-                    state.items = state.items.filter(item => item.id !== id);
-                }
+                item.quantity = Math.max(1, Math.min(9, quantity));
             }
-            state.total = state.items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
         },
-        showCart: (state) => {
-            state.visible = true;
+        toggleCart: (state) => {
+            state.isOpen = !state.isOpen;
         },
-        hideCart: (state) => {
-            state.visible = false;
+        closeCart: (state) => {
+            state.isOpen = false;
         },
-        clearCart: (state) => {
-            state.items = [];
-            state.total = 0;
-        }
+        openCart: (state) => {
+            state.isOpen = true;
+        },
     }
 });
 
-export const { addToCart, removeFromCart, updateQuantity, showCart, hideCart, clearCart } = CartSlice.actions;
-export const CartReducer = CartSlice.reducer; 
+export const { 
+    addToCart, 
+    removeFromCart, 
+    updateQuantity, 
+    toggleCart, 
+    closeCart, 
+    openCart 
+} = cartSlice.actions;
+
+export default cartSlice.reducer; 
