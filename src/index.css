@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    /* NAVBAR */
+    .navbar{
+        @apply p-4 text-white  px-1
+
+    }
+    #root{
+        @apply  bg-zinc-900 text-white
+    }
+    .logo-gradient {
+        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+        -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+      }
+      .card-uniform {
+        height: 24rem; /* Altezza uniforme per tutte le card */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      
+      .card-uniform figure {
+        height: 15em; /* Altezza fissa per l'immagine */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .card-uniform img {
+        max-height: 100%; /* L'immagine si adatta all'altezza del contenitore */
+        max-width: 100%; /* L'immagine si adatta alla larghezza del contenitore */
+        object-fit: contain; /* Mantiene le proporzioni dell'immagine */
+      }
+      
+      .card-uniform .card-body {
+        flex-grow: 1; /* Permette al contenuto di occupare lo spazio disponibile */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .card-title {
+        white-space: nowrap; /* Impedisce al testo di andare a capo */
+        overflow: hidden; /* Nasconde il testo che esce dai limiti */
+        text-overflow: ellipsis; /* Aggiunge "..." se il testo è troppo lungo */
+      }
+      .categories-gradient {
+        mask-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+        -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+      }
+}
+      
