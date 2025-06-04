@@ -187,7 +187,6 @@ const SingleProduct = ({
                 width: '100%',
                 marginBottom: '1rem',
                 marginTop: '0'
-                
               }}>
                 <div style={{
                   width: '100%',
@@ -231,11 +230,7 @@ const SingleProduct = ({
                       borderRadius: '8px',
                       backgroundColor: '#f8fafc',
                       transition: 'transform 0.2s, box-shadow 0.2s',
-                      cursor: 'default',
-                      '@media (max-width: 768px)': {
-                        padding: '0.75rem',
-                        gap: '0.75rem'
-                      }
+                      cursor: 'default'
                     }}>
                       <div style={{
                         minWidth: '40px',
@@ -245,45 +240,15 @@ const SingleProduct = ({
                         justifyContent: 'center',
                         backgroundColor: '#2563eb',
                         borderRadius: '8px',
-                        padding: '0.5rem',
-                        '@media (max-width: 768px)': {
-                          minWidth: '32px',
-                          height: '32px',
-                          padding: '0.375rem'
-                        }
+                        padding: '0.5rem'
                       }}>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{
-                          width: '24px',
-                          height: '24px',
-                          '@media (max-width: 768px)': {
-                            width: '20px',
-                            height: '20px'
-                          }
-                        }}>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ width: '24px', height: '24px' }}>
                           <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
                         </svg>
                       </div>
                       <div>
-                        <div style={{
-                          fontWeight: '600',
-                          color: '#64748b',
-                          textTransform: 'uppercase',
-                          fontSize: '0.875rem',
-                          marginBottom: '0.25rem',
-                          letterSpacing: '0.05em',
-                          '@media (max-width: 768px)': {
-                            fontSize: '0.75rem',
-                            marginBottom: '0.125rem'
-                          }
-                        }}>Peso</div>
-                        <div style={{
-                          color: '#1a1a1a',
-                          fontSize: '1.125rem',
-                          fontWeight: '500',
-                          '@media (max-width: 768px)': {
-                            fontSize: '1rem'
-                          }
-                        }}>{selectedProduct.peso}g</div>
+                        <div style={{ fontWeight: '600', color: '#64748b', textTransform: 'uppercase', fontSize: '0.875rem', marginBottom: '0.25rem', letterSpacing: '0.05em' }}>Peso</div>
+                        <div style={{ color: '#1a1a1a', fontSize: '1.125rem', fontWeight: '500' }}>{selectedProduct.peso}g</div>
                       </div>
                     </div>
 
@@ -389,150 +354,146 @@ const SingleProduct = ({
               </div>
             )}
 
-            {/* Sezione descrizione */}
-            {selectedProduct.category === 'racchetta' && (
-              <div className="product-section-container" style={{
-                display: 'flex',
-                justifyContent: 'center',
-                marginTop: '0',
+            {/* Sezione descrizione - per tutte le categorie */}
+            <div className="product-section-container" style={{
+              display: 'flex',
+              justifyContent: 'center',
+              marginTop: '0',
+              width: '100%',
+              marginBottom: '0',
+            }}>
+              <div style={{
                 width: '100%',
-                marginBottom: '0',
+                border: '1px solid #e5e7eb',
+                borderRadius: '12px',
+                padding: '2rem',
+                backgroundColor: '#ffffff',
+                maxWidth: '100%',
+                boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
               }}>
+                <h2 style={{
+                  fontSize: '1.75rem',
+                  fontWeight: '700',
+                  marginBottom: '2rem',
+                  color: '#1a1a1a',
+                  textAlign: 'center',
+                  letterSpacing: '-0.025em',
+                  borderBottom: '2px solid #e5e7eb',
+                  paddingBottom: '1rem',
+                  textTransform: 'uppercase'
+                }}>
+                  Descrizione
+                </h2>
+                
                 <div style={{
                   width: '100%',
-                  border: '1px solid #e5e7eb',
-                  borderRadius: '12px',
-                  padding: '2rem',
-                  backgroundColor: '#ffffff',
-                  maxWidth: '100%',
-                  boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
+                  fontSize: '1rem',
+                  lineHeight: '1.75',
+                  color: '#374151'
                 }}>
-                  <h2 style={{
-                    fontSize: '1.75rem',
-                    fontWeight: '700',
-                    marginBottom: '2rem',
-                    color: '#1a1a1a',
-                    textAlign: 'center',
-                    letterSpacing: '-0.025em',
-                    borderBottom: '2px solid #e5e7eb',
-                    paddingBottom: '1rem',
-                    textTransform: 'uppercase'
-                  }}>
-                    Descrizione
-                  </h2>
-                  
-                  <div style={{
-                    width: '100%',
-                    fontSize: '1rem',
-                    lineHeight: '1.75',
-                    color: '#374151'
-                  }}>
-                    {isDescriptionExpanded ? (
-                      <>
-                        <p style={{
-                          marginBottom: '1.5rem',
-                          textAlign: 'justify'
-                        }}>
-                          {selectedProduct.description}
-                        </p>
-                        <button 
-                          onClick={() => setIsDescriptionExpanded(false)}
-                          style={{
-                            color: '#2563eb',
-                            fontWeight: '500',
-                            background: 'none',
-                            border: 'none',
-                            padding: '0.5rem 1rem',
-                            cursor: 'pointer',
-                            display: 'block',
-                            margin: '0 auto',
-                            transition: 'color 0.2s',
-                            ':hover': {
-                              color: '#1d4ed8'
-                            }
-                          }}
-                        >
-                          Mostra meno
-                        </button>
-                      </>
-                    ) : (
-                      <>
-                        <p style={{
-                          marginBottom: '1.5rem',
-                          textAlign: 'justify'
-                        }}>
-                          {getFirst10Words(selectedProduct.description)}
-                        </p>
-                        <button 
-                          onClick={() => setIsDescriptionExpanded(true)}
-                          style={{
-                            color: '#2563eb',
-                            fontWeight: '500',
-                            background: 'none',
-                            border: 'none',
-                            padding: '0.5rem 1rem',
-                            cursor: 'pointer',
-                            display: 'block',
-                            margin: '0 auto',
-                            transition: 'color 0.2s',
-                            ':hover': {
-                              color: '#1d4ed8'
-                            }
-                          }}
-                        >
-                          Mostra tutto
-                        </button>
-                      </>
-                    )}
-                  </div>
+                  {isDescriptionExpanded ? (
+                    <>
+                      <p style={{
+                        marginBottom: '1.5rem',
+                        textAlign: 'justify'
+                      }}>
+                        {selectedProduct.description}
+                      </p>
+                      <button 
+                        onClick={() => setIsDescriptionExpanded(false)}
+                        style={{
+                          color: '#2563eb',
+                          fontWeight: '500',
+                          background: 'none',
+                          border: 'none',
+                          padding: '0.5rem 1rem',
+                          cursor: 'pointer',
+                          display: 'block',
+                          margin: '0 auto',
+                          transition: 'color 0.2s',
+                          ':hover': {
+                            color: '#1d4ed8'
+                          }
+                        }}
+                      >
+                        Mostra meno
+                      </button>
+                    </>
+                  ) : (
+                    <>
+                      <p style={{
+                        marginBottom: '1.5rem',
+                        textAlign: 'justify'
+                      }}>
+                        {getFirst10Words(selectedProduct.description)}
+                      </p>
+                      <button 
+                        onClick={() => setIsDescriptionExpanded(true)}
+                        style={{
+                          color: '#2563eb',
+                          fontWeight: '500',
+                          background: 'none',
+                          border: 'none',
+                          padding: '0.5rem 1rem',
+                          cursor: 'pointer',
+                          display: 'block',
+                          margin: '0 auto',
+                          transition: 'color 0.2s',
+                          ':hover': {
+                            color: '#1d4ed8'
+                          }
+                        }}
+                      >
+                        Mostra tutto
+                      </button>
+                    </>
+                  )}
                 </div>
               </div>
-            )}
+            </div>
 
-            {/* Sezione Prodotti Simili */}
-            {selectedProduct.category === 'racchetta' && (
-              <div className="product-section-container" style={{
-                display: 'flex',
-                justifyContent: 'center',
-                marginTop: '1rem',
+            {/* Sezione Prodotti Simili - per tutte le categorie */}
+            <div className="product-section-container" style={{
+              display: 'flex',
+              justifyContent: 'center',
+              marginTop: '1rem',
+              width: '100%',
+              marginBottom: '0'
+            }}>
+              <div style={{
                 width: '100%',
-                marginBottom: '0'
+                border: '1px solid #e5e7eb',
+                borderRadius: '12px',
+                padding: '2rem',
+                backgroundColor: '#ffffff',
+                maxWidth: '100%',
+                boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
               }}>
-                <div style={{
-                  width: '100%',
-                  border: '1px solid #e5e7eb',
-                  borderRadius: '12px',
-                  padding: '2rem',
-                  backgroundColor: '#ffffff',
-                  maxWidth: '100%',
-                  boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
+                <h2 style={{
+                  fontSize: '1.75rem',
+                  fontWeight: '700',
+                  marginBottom: '2rem',
+                  color: '#1a1a1a',
+                  textAlign: 'center',
+                  letterSpacing: '-0.025em',
+                  borderBottom: '2px solid #e5e7eb',
+                  paddingBottom: '1rem',
+                  textTransform: 'uppercase'
                 }}>
-                  <h2 style={{
-                    fontSize: '1.75rem',
-                    fontWeight: '700',
-                    marginBottom: '2rem',
-                    color: '#1a1a1a',
-                    textAlign: 'center',
-                    letterSpacing: '-0.025em',
-                    borderBottom: '2px solid #e5e7eb',
-                    paddingBottom: '1rem',
-                    textTransform: 'uppercase'
-                  }}>
-                    Prodotti Simili
-                  </h2>
+                  Prodotti Simili
+                </h2>
 
-                  <div className="similar-products-container">
-                    <Categories
-                      prodotti={products}
-                      category={selectedProduct.category}
-                      useCarousel={true}
-                      responsive={false}
-                      visibleCount={1}                     
-                    />
-                  </div>
+                <div className="similar-products-container">
+                  <Categories
+                    prodotti={products}
+                    category={selectedProduct.category}
+                    useCarousel={true}
+                    responsive={false}
+                    visibleCount={1}                     
+                  />
                 </div>
               </div>
-            )}
+            </div>
           </div>
         </div>
 
