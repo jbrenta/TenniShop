@@ -1,33 +1,33 @@
 // Banner Images
 export const bannerImages = {
-  boom: '/assets/head-boom-banner.jpg',
-  pure: '/assets/pure-drive-gen11.jpg',
-  ezone: '/assets/ezone-2025.jpg',
-  sinner: '/assets/sinner-ao25.jpg',
+  boom: 'assets/banner/head-boom-banner.jpg',
+  pure: 'assets/banner/pure-drive-gen11.jpg',
+  ezone: 'assets/banner/ezone-2025.jpg',
+  sinner: 'assets/banner/sinner-ao25.jpg',
 };
 
 // Category Images
 export const categoryImages = {
-  racchetta: '/assets/racchetta.webp',
-  maglietta: '/assets/maglia.jpg',
-  scarpa: '/assets/scarpa.jpg',
-  borsone: '/assets/borsone.jpg',
+  racchetta: 'assets/categorie/racchetta.webp',
+  maglietta: 'assets/categorie/maglia.jpg',
+  scarpa: 'assets/categorie/scarpa.jpg',
+  borsone: 'assets/categorie/borsone.jpg',
 };
 
 // Brand Logos
 export const brandLogos = {
-  adidas: '/assets/loghi/adidas.jpg',
-  asics: '/assets/loghi/asics.jpg',
-  babolat: '/assets/loghi/babolat.png',
-  head: '/assets/loghi/Head-Logo.jpg',
-  nike: '/assets/loghi/nike.jpg',
-  wilson: '/assets/loghi/wilson.webp',
+  adidas: 'assets/loghi/adidas.jpg',
+  asics: 'assets/loghi/asics.jpg',
+  babolat: 'assets/loghi/babolat.png',
+  head: 'assets/loghi/Head-Logo.jpg',
+  nike: 'assets/loghi/nike.jpg',
+  wilson: 'assets/loghi/wilson.webp',
 };
 
 // Categories Banner Images
 export const categoryBanners = {
-  head: '/assets/categories/CategoriesHead.webp',
-  babolat: '/assets/categories/CategoriesBabolat.jpg',
-  wilson: '/assets/categories/CategoriesWilson.webp',
-  adidas: '/assets/categories/CategoriesAdidas.jpeg',
+  head: 'assets/categorie/CategoriesHead.webp',
+  babolat: 'assets/categorie/CategoriesBabolat.jpg',
+  wilson: 'assets/categorie/CategoriesWilson.webp',
+  adidas: 'assets/categorie/CategoriesAdidas.jpeg',
 }; 

@@ -1,10 +1,10 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { hideSideBar } from './SideBarSlice';
-import racchette from "../../../public/assets/racchetta.webp";
-import maglia from "../../../public/assets/maglia.jpg";
-import scarpa from "../../../public/assets/scarpa.jpg";
-import borsone from "../../../public/assets/borsone.jpg";
+import racchette from "/assets/categorie/racchetta.webp";
+import maglia from "/assets/categorie/maglia.jpg";
+import scarpa from "/assets/categorie/scarpa.jpg";
+import borsone from "/assets/categorie/borsone.jpg";
 
 
 function SideBar() {

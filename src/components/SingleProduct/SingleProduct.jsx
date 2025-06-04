@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { moveToTwo } from '../Navbar/NavbarSlice';
@@ -6,6 +6,8 @@ import { visibleDetails } from '../ProductsDetails/ProductDetailsSlice';
 import { hiddenSingleProduct } from './SingleProductSlice.js';
 import { addToCart } from '../Cart/CartSlice';
 import './SingleProduct.css';
+import { products } from '../../data/products';
+import Categories from '../Categorie/Categories';
 
 const SingleProduct = ({
   width = 400,
@@ -23,6 +25,25 @@ const SingleProduct = ({
   const [isHovering, setIsHovering] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(1);
+
+  // Gestione responsive del numero di elementi visibili
+  useEffect(() => {
+    const handleResize = () => {
+      // Se la larghezza è maggiore di 768px (orizzontale), mostra 2 elementi
+      // altrimenti (verticale) mostra 1 elemento
+      setVisibleCount(window.innerWidth > 768 ? 2 : 1);
+    };
+
+    // Imposta il valore iniziale
+    handleResize();
+
+    // Aggiungi l'event listener per il resize
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   // Aggiorna la posizione del mouse
   const handleMouseMove = e => {
@@ -73,20 +94,34 @@ const SingleProduct = ({
   return (
     <>
       <div className="breadcrumbs-container max-w-[1200px] mx-auto p-4">
-        <ul className="text-sm breadcrumbs">
-          <li><a onClick={handleBackToProducts} className="text-gray-600 hover:text-gray-800">Prodotti</a></li>
-          <li className="text-gray-600">{selectedProduct.category}</li>
-          <li className="text-gray-800">{selectedProduct.name}</li>
+        <ul className="text-sm breadcrumbs inline-flex space-x-2">
+          <li><a onClick={handleBackToProducts} className="text-white hover:text-gray-800">Prodotti</a></li>
+          <li className="text-white">{selectedProduct.category}</li>
+          <li className="text-white">{selectedProduct.name}</li>
         </ul>
       </div>
 
       <div className="product-container">
         {/* Main content area - scrollable */}
-        <div className="main-content">
+        <div className="main-content" style={{
+          padding: '0 0.75rem 2rem 0.75rem',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center'
+        }}>
           {/* Immagine e caratteristiche */}
-          <div className="product-image-section">
+          <div className="product-image-section" style={{
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center'
+          }}>
             {/* Contenitore immagine con stile consistente */}
-            <div className="product-section-container">
+            <div className="product-section-container" style={{
+              display: 'flex',
+              justifyContent: 'center',
+              marginBottom: '1rem'
+            }}>
               <div
                 ref={containerRef}
                 style={{
@@ -108,7 +143,6 @@ const SingleProduct = ({
                 onMouseMove={handleMouseMove}
                 onMouseLeave={() => setIsHovering(false)}
               >
-                {/* Miniatura in basso a destra */}
                 {isHovering && (
                   <div
                     style={{
@@ -144,100 +178,368 @@ const SingleProduct = ({
               </div>
             </div>
 
-            {/* Specifiche tecniche */}
+            {/* Sezione caratteristiche per racchette */}
             {selectedProduct.category === 'racchetta' && (
-              <div className="technical-specs-grid">
-                <div className="tech-spec-item">
-                  <div className="tech-spec-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="spec-icon">
-                      <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                    </svg>
-                  </div>
-                  <div className="tech-spec-content">
-                    <span className="tech-spec-label">Peso</span>
-                    <span className="tech-spec-value">{selectedProduct.peso}g</span>
-                  </div>
-                </div>
+              <div className="product-section-container" style={{
+                display: 'flex',
+                justifyContent: 'center',
+                marginTop: '1rem',
+                width: '100%',
+                marginBottom: '1rem',
+                marginTop: '0'
+                
+              }}>
+                <div style={{
+                  width: '100%',
+                  border: '1px solid #e5e7eb',
+                  borderRadius: '12px',
+                  padding: '2rem',
+                  backgroundColor: '#ffffff',
+                  maxWidth: '100%',
+                  boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
+                }}>
+                  <h2 style={{
+                    fontSize: '1.75rem',
+                    fontWeight: '700',
+                    marginBottom: '2rem',
+                    color: '#1a1a1a',
+                    textAlign: 'center',
+                    letterSpacing: '-0.025em',
+                    borderBottom: '2px solid #e5e7eb',
+                    paddingBottom: '1rem',
+                    textTransform: 'uppercase'
+                  }}>
+                    Caratteristiche Tecniche
+                  </h2>
+                  
+                  <div style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+                    gap: '2rem',
+                    fontSize: '1rem',
+                    width: '100%',
+                    '@media (max-width: 768px)': {
+                      gap: '1rem'
+                    }
+                  }}>
+                    {/* Peso */}
+                    <div style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '1rem',
+                      padding: '1rem',
+                      borderRadius: '8px',
+                      backgroundColor: '#f8fafc',
+                      transition: 'transform 0.2s, box-shadow 0.2s',
+                      cursor: 'default',
+                      '@media (max-width: 768px)': {
+                        padding: '0.75rem',
+                        gap: '0.75rem'
+                      }
+                    }}>
+                      <div style={{
+                        minWidth: '40px',
+                        height: '40px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        backgroundColor: '#2563eb',
+                        borderRadius: '8px',
+                        padding: '0.5rem',
+                        '@media (max-width: 768px)': {
+                          minWidth: '32px',
+                          height: '32px',
+                          padding: '0.375rem'
+                        }
+                      }}>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{
+                          width: '24px',
+                          height: '24px',
+                          '@media (max-width: 768px)': {
+                            width: '20px',
+                            height: '20px'
+                          }
+                        }}>
+                          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                      </div>
+                      <div>
+                        <div style={{
+                          fontWeight: '600',
+                          color: '#64748b',
+                          textTransform: 'uppercase',
+                          fontSize: '0.875rem',
+                          marginBottom: '0.25rem',
+                          letterSpacing: '0.05em',
+                          '@media (max-width: 768px)': {
+                            fontSize: '0.75rem',
+                            marginBottom: '0.125rem'
+                          }
+                        }}>Peso</div>
+                        <div style={{
+                          color: '#1a1a1a',
+                          fontSize: '1.125rem',
+                          fontWeight: '500',
+                          '@media (max-width: 768px)': {
+                            fontSize: '1rem'
+                          }
+                        }}>{selectedProduct.peso}g</div>
+                      </div>
+                    </div>
 
-                <div className="tech-spec-item">
-                  <div className="tech-spec-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="spec-icon">
-                      <circle cx="12" cy="12" r="10"/>
-                      <path d="M12 2v20M2 12h20"/>
-                    </svg>
-                  </div>
-                  <div className="tech-spec-content">
-                    <span className="tech-spec-label">Bilanciamento</span>
-                    <span className="tech-spec-value">
-                      {selectedProduct.bilancio === 'piattocorde' ? 'Piatto Corde' :
-                       selectedProduct.bilancio === 'manico' ? 'Manico' : 'Bilanciato'}
-                    </span>
-                  </div>
-                </div>
+                    {/* Bilanciamento */}
+                    <div style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '1rem',
+                      padding: '1rem',
+                      borderRadius: '8px',
+                      backgroundColor: '#f8fafc',
+                      transition: 'transform 0.2s, box-shadow 0.2s',
+                      cursor: 'default'
+                    }}>
+                      <div style={{
+                        minWidth: '40px',
+                        height: '40px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        backgroundColor: '#2563eb',
+                        borderRadius: '8px',
+                        padding: '0.5rem'
+                      }}>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ width: '24px', height: '24px' }}>
+                          <circle cx="12" cy="12" r="10"/>
+                          <path d="M12 2v20M2 12h20"/>
+                        </svg>
+                      </div>
+                      <div>
+                        <div style={{ fontWeight: '600', color: '#64748b', textTransform: 'uppercase', fontSize: '0.875rem', marginBottom: '0.25rem', letterSpacing: '0.05em' }}>Bilanciamento</div>
+                        <div style={{ color: '#1a1a1a', fontSize: '1.125rem', fontWeight: '500' }}>
+                          {selectedProduct.bilancio === 'piattocorde' ? 'Piatto Corde' :
+                           selectedProduct.bilancio === 'manico' ? 'Manico' : 'Bilanciato'}
+                        </div>
+                      </div>
+                    </div>
 
-                <div className="tech-spec-item">
-                  <div className="tech-spec-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="spec-icon">
-                      <rect x="3" y="3" width="18" height="18" rx="2"/>
-                      <path d="M3 9h18M3 15h18"/>
-                    </svg>
-                  </div>
-                  <div className="tech-spec-content">
-                    <span className="tech-spec-label">Schema corde</span>
-                    <span className="tech-spec-value">16/19</span>
-                  </div>
-                </div>
+                    {/* Piatto Corde */}
+                    <div style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '1rem',
+                      padding: '1rem',
+                      borderRadius: '8px',
+                      backgroundColor: '#f8fafc',
+                      transition: 'transform 0.2s, box-shadow 0.2s',
+                      cursor: 'default'
+                    }}>
+                      <div style={{
+                        minWidth: '40px',
+                        height: '40px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        backgroundColor: '#2563eb',
+                        borderRadius: '8px',
+                        padding: '0.5rem'
+                      }}>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ width: '24px', height: '24px' }}>
+                          <rect x="3" y="3" width="18" height="18" rx="2"/>
+                          <path d="M3 9h18M3 15h18"/>
+                        </svg>
+                      </div>
+                      <div>
+                        <div style={{ fontWeight: '600', color: '#64748b', textTransform: 'uppercase', fontSize: '0.875rem', marginBottom: '0.25rem', letterSpacing: '0.05em' }}>Dimensione Piatto</div>
+                        <div style={{ color: '#1a1a1a', fontSize: '1.125rem', fontWeight: '500' }}>645 cm²</div>
+                      </div>
+                    </div>
 
-                <div className="tech-spec-item">
-                  <div className="tech-spec-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="spec-icon">
-                      <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                    </svg>
-                  </div>
-                  <div className="tech-spec-content">
-                    <span className="tech-spec-label">Dimensione head</span>
-                    <span className="tech-spec-value">645 cm²</span>
+                    {/* Materiale */}
+                    <div style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '1rem',
+                      padding: '1rem',
+                      borderRadius: '8px',
+                      backgroundColor: '#f8fafc',
+                      transition: 'transform 0.2s, box-shadow 0.2s',
+                      cursor: 'default'
+                    }}>
+                      <div style={{
+                        minWidth: '40px',
+                        height: '40px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        backgroundColor: '#2563eb',
+                        borderRadius: '8px',
+                        padding: '0.5rem'
+                      }}>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ width: '24px', height: '24px' }}>
+                          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                        </svg>
+                      </div>
+                      <div>
+                        <div style={{ fontWeight: '600', color: '#64748b', textTransform: 'uppercase', fontSize: '0.875rem', marginBottom: '0.25rem', letterSpacing: '0.05em' }}>Materiale</div>
+                        <div style={{ color: '#1a1a1a', fontSize: '1.125rem', fontWeight: '500' }}>Grafite</div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             )}
 
-            {/* Sezione Descrizione */}
-            <div className="product-description">
-              <h2 className="text-2xl font-bold mb-6 border-b pb-2 text-black">Descrizione</h2>
-              <div className="description-content prose max-w-none text-black">
-                {isDescriptionExpanded ? (
-                  <>
-                    <p className="text-gray-700 leading-relaxed mb-4">
-                      {selectedProduct.description}
-                    </p>
-                    <button 
-                      onClick={() => setIsDescriptionExpanded(false)}
-                      className="text-blue-600 hover:text-blue-800 underline font-medium"
-                    >
-                      Mostra meno
-                    </button>
-                  </>
-                ) : (
-                  <>
-                    <p className="text-gray-700 leading-relaxed mb-4">
-                      {getFirst10Words(selectedProduct.description)}
-                    </p>
-                    <button 
-                      onClick={() => setIsDescriptionExpanded(true)}
-                      className="text-blue-600 hover:text-blue-800 underline font-medium"
-                    >
-                      Mostra tutto
-                    </button>
-                  </>
-                )}
+            {/* Sezione descrizione */}
+            {selectedProduct.category === 'racchetta' && (
+              <div className="product-section-container" style={{
+                display: 'flex',
+                justifyContent: 'center',
+                marginTop: '0',
+                width: '100%',
+                marginBottom: '0',
+              }}>
+                <div style={{
+                  width: '100%',
+                  border: '1px solid #e5e7eb',
+                  borderRadius: '12px',
+                  padding: '2rem',
+                  backgroundColor: '#ffffff',
+                  maxWidth: '100%',
+                  boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
+                }}>
+                  <h2 style={{
+                    fontSize: '1.75rem',
+                    fontWeight: '700',
+                    marginBottom: '2rem',
+                    color: '#1a1a1a',
+                    textAlign: 'center',
+                    letterSpacing: '-0.025em',
+                    borderBottom: '2px solid #e5e7eb',
+                    paddingBottom: '1rem',
+                    textTransform: 'uppercase'
+                  }}>
+                    Descrizione
+                  </h2>
+                  
+                  <div style={{
+                    width: '100%',
+                    fontSize: '1rem',
+                    lineHeight: '1.75',
+                    color: '#374151'
+                  }}>
+                    {isDescriptionExpanded ? (
+                      <>
+                        <p style={{
+                          marginBottom: '1.5rem',
+                          textAlign: 'justify'
+                        }}>
+                          {selectedProduct.description}
+                        </p>
+                        <button 
+                          onClick={() => setIsDescriptionExpanded(false)}
+                          style={{
+                            color: '#2563eb',
+                            fontWeight: '500',
+                            background: 'none',
+                            border: 'none',
+                            padding: '0.5rem 1rem',
+                            cursor: 'pointer',
+                            display: 'block',
+                            margin: '0 auto',
+                            transition: 'color 0.2s',
+                            ':hover': {
+                              color: '#1d4ed8'
+                            }
+                          }}
+                        >
+                          Mostra meno
+                        </button>
+                      </>
+                    ) : (
+                      <>
+                        <p style={{
+                          marginBottom: '1.5rem',
+                          textAlign: 'justify'
+                        }}>
+                          {getFirst10Words(selectedProduct.description)}
+                        </p>
+                        <button 
+                          onClick={() => setIsDescriptionExpanded(true)}
+                          style={{
+                            color: '#2563eb',
+                            fontWeight: '500',
+                            background: 'none',
+                            border: 'none',
+                            padding: '0.5rem 1rem',
+                            cursor: 'pointer',
+                            display: 'block',
+                            margin: '0 auto',
+                            transition: 'color 0.2s',
+                            ':hover': {
+                              color: '#1d4ed8'
+                            }
+                          }}
+                        >
+                          Mostra tutto
+                        </button>
+                      </>
+                    )}
+                  </div>
+                </div>
               </div>
-            </div>
+            )}
+
+            {/* Sezione Prodotti Simili */}
+            {selectedProduct.category === 'racchetta' && (
+              <div className="product-section-container" style={{
+                display: 'flex',
+                justifyContent: 'center',
+                marginTop: '1rem',
+                width: '100%',
+                marginBottom: '0'
+              }}>
+                <div style={{
+                  width: '100%',
+                  border: '1px solid #e5e7eb',
+                  borderRadius: '12px',
+                  padding: '2rem',
+                  backgroundColor: '#ffffff',
+                  maxWidth: '100%',
+                  boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
+                }}>
+                  <h2 style={{
+                    fontSize: '1.75rem',
+                    fontWeight: '700',
+                    marginBottom: '2rem',
+                    color: '#1a1a1a',
+                    textAlign: 'center',
+                    letterSpacing: '-0.025em',
+                    borderBottom: '2px solid #e5e7eb',
+                    paddingBottom: '1rem',
+                    textTransform: 'uppercase'
+                  }}>
+                    Prodotti Simili
+                  </h2>
+
+                  <div className="similar-products-container">
+                    <Categories
+                      prodotti={products}
+                      category={selectedProduct.category}
+                      useCarousel={true}
+                      responsive={false}
+                      visibleCount={1}                     
+                    />
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
 
         {/* Sidebar - fixed */}
-        <div className="product-sidebar">
+        <div className="product-sidebar" style={{
+          marginTop: '0.75rem'
+        }}>
           {/* Header prodotto */}
           <div className="product-title-container">
             <span className="product-brand d-block">{selectedProduct.brand}</span>
