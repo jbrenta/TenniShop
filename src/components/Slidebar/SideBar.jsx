@@ -3,11 +3,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { hideSideBar } from "./SideBarSlice";
-import racchette from "/assets/imgprodotti/categorie/racchetta.webp";
-import maglia from "/assets/imgprodotti/categorie/maglia.jpg";
-import scarpa from "/assets/imgprodotti/categorie/scarpa.jpg";
-import borsone from "/assets/imgprodotti/categorie/borsone.jpg";
-
+import { categoryImages } from "../../data/images";
 
 function SideBar() {
     const dispatch = useDispatch();
@@ -34,7 +30,7 @@ return (
                         <h2 className="card-title p-2 border-2 border-b-2 rounded-t-lg text-black bg-white">Racchette</h2>
                       </div>
                       <figure>
-                        <img src={racchette} alt="Shoes" />
+                        <img src={categoryImages.racchetta} alt="Racchette" />
                       </figure>
                     </div>
                     <div className="card bg-base-100 w-36 sm:w-40 md:w-40 lg:w-52 xl:w-72 hover:scale-110 hover:opacity-75 transition-transform duration-300 ease-in-out shadow-sm cursor-pointer">
@@ -42,7 +38,7 @@ return (
                         <h2 className="card-title p-2 border-2 border-b-2 rounded-t-lg text-black bg-white">Abbigliamento</h2>
                       </div>
                       <figure>
-                        <img src={maglia} alt="Shoes" />
+                        <img src={categoryImages.maglietta} alt="Abbigliamento" />
                       </figure>
                     </div>
                     <div className="card bg-base-100 w-36 sm:w-40 md:w-40 lg:w-52 xl:w-72 hover:scale-110 hover:opacity-75 transition-transform duration-300 ease-in-out shadow-sm cursor-pointer">
@@ -50,7 +46,7 @@ return (
                         <h2 className="card-title p-2 border-2 border-b-2 rounded-t-lg text-black bg-white">Scarpe</h2>
                       </div>
                       <figure>
-                        <img src={scarpa} alt="Shoes" />
+                        <img src={categoryImages.scarpa} alt="Scarpe" />
                       </figure>
                     </div>
                     <div className="card bg-base-100 w-36 sm:w-40 md:w-40 lg:w-52 xl:w-72 hover:scale-110 hover:opacity-75 transition-transform duration-300 ease-in-out shadow-sm cursor-pointer">
@@ -58,7 +54,7 @@ return (
                         <h2 className="card-title p-2 border-2 border-b-2 rounded-t-lg text-black bg-white">Borsoni</h2>
                       </div>
                       <figure>
-                        <img src={borsone} alt="Shoes" />
+                        <img src={categoryImages.borsone} alt="Borsoni" />
                       </figure>
                     </div>
                   </div>
