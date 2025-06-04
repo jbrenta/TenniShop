@@ -1,10 +1,12 @@
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { hideSideBar } from './SideBarSlice';
-import racchette from "/assets/categorie/racchetta.webp";
-import maglia from "/assets/categorie/maglia.jpg";
-import scarpa from "/assets/categorie/scarpa.jpg";
-import borsone from "/assets/categorie/borsone.jpg";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { hideSideBar } from "./SideBarSlice";
+import racchette from "/assets/imgprodotti/categorie/racchetta.webp";
+import maglia from "/assets/imgprodotti/categorie/maglia.jpg";
+import scarpa from "/assets/imgprodotti/categorie/scarpa.jpg";
+import borsone from "/assets/imgprodotti/categorie/borsone.jpg";
 
 
 function SideBar() {
