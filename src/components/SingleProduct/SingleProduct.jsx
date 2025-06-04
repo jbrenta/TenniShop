@@ -183,7 +183,6 @@ const SingleProduct = ({
               <div className="product-section-container" style={{
                 display: 'flex',
                 justifyContent: 'center',
-                marginTop: '1rem',
                 width: '100%',
                 marginBottom: '1rem',
                 marginTop: '0'
