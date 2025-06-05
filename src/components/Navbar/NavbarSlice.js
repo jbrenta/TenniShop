@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const NavbarSlice = createSlice({
     name: "Navbar",
     initialState: {
-        tab: 1,
+        tab: 1, // Default to Home tab
         showSearch: false,
         searchTerm: "",
     },

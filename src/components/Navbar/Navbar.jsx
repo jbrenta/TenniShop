@@ -82,9 +82,9 @@ function Navbar() {
 
   return (
     <>
-      <div className="navbar bg-zinc-900 flex mx-auto shadow-sm">
+      <div className="navbar bg-gradient-to-r from-zinc-900 via-zinc-800 to-zinc-900 backdrop-blur-md border-b border-zinc-800/50 shadow-lg">
         <button
-          className="mr-2 md:hidden"
+          className="mr-2 md:hidden hover:bg-zinc-800/50 p-2 rounded-lg transition-colors duration-200"
           onClick={() => {
             dispatch(showSideBar());
             dispatch(hidden());
@@ -101,7 +101,7 @@ function Navbar() {
           </svg>
         </button>
         <div className="flex-1">
-          <a className="btn btn-ghost text-xl">TenniShop</a>
+          <a className="btn btn-ghost text-xl font-bold bg-gradient-to-r from-yellow-200 to-yellow-500 bg-clip-text text-transparent hover:from-yellow-300 hover:to-yellow-600 transition-all duration-300">TenniShop</a>
         </div>
         {tab === 1 && (
           <div className="hidden md:flex justify-center w-full my-2">
@@ -109,11 +109,11 @@ function Navbar() {
               <input
                 type="text"
                 placeholder="Cerca prodotti, categorie o marchi..."
-                className="input input-bordered glass w-full"
+                className="input bg-zinc-800/50 border-zinc-700 w-full focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all duration-200 placeholder:text-zinc-400"
                 value={localSearchTerm}
                 onChange={(e) => setLocalSearchTerm(e.target.value)}
               />
-              <button type="submit" className="btn btn-primary ml-2">
+              <button type="submit" className="btn bg-yellow-500 hover:bg-yellow-600 text-black border-none ml-2 transition-all duration-200">
                 Cerca
               </button>
             </form>
@@ -122,7 +122,7 @@ function Navbar() {
         <div className="flex-none">
           <div className="flex items-center gap-2">
             <button
-              className="btn btn-ghost btn-circle"
+              className="btn btn-ghost btn-circle hover:bg-zinc-800/50 transition-colors duration-200"
               onClick={() => dispatch(openCart())}
             >
               <div className="indicator">
@@ -141,7 +141,7 @@ function Navbar() {
                   />
                 </svg>
                 {cartItems.length > 0 && (
-                  <span className="badge badge-sm indicator-item">{cartItems.length}</span>
+                  <span className="badge badge-sm indicator-item bg-yellow-500 text-black border-none">{cartItems.length}</span>
                 )}
               </div>
             </button>
@@ -150,7 +150,7 @@ function Navbar() {
               <div
                 tabIndex={0}
                 role="button"
-                className="btn btn-ghost btn-circle avatar"
+                className="btn btn-ghost btn-circle avatar ring-2 ring-zinc-700 hover:ring-yellow-500/50 transition-all duration-200"
               >
                 <div className="w-10 rounded-full">
                   <img
@@ -161,20 +161,16 @@ function Navbar() {
               </div>
               <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow-lg bg-zinc-800/95 backdrop-blur-md rounded-box w-52 border border-zinc-700"
               >
                 <li>
-                  <a className="justify-between">
+                  <a className="hover:bg-zinc-700/50">
                     Profile
-                    <span className="badge">New</span>
+                    <span className="badge bg-yellow-500 text-black border-none">New</span>
                   </a>
                 </li>
-                <li>
-                  <a>Settings</a>
-                </li>
-                <li>
-                  <a>Logout</a>
-                </li>
+                <li><a className="hover:bg-zinc-700/50">Settings</a></li>
+                <li><a className="hover:bg-zinc-700/50">Logout</a></li>
               </ul>
             </div>
           </div>
@@ -182,13 +178,13 @@ function Navbar() {
       </div>
       <div
         role="tablist"
-        className="tabs tabs-box flex justify-center tabs-sm xs:tabs-md md:tabs-lg xl:tabs-lg mx-auto font-bold rounded-none glass"
+        className="tabs tabs-box flex justify-center tabs-sm xs:tabs-md md:tabs-lg xl:tabs-lg mx-auto font-bold rounded-none bg-gradient-to-r from-zinc-900 via-zinc-800 to-zinc-900 border-b border-zinc-800/50 shadow-md"
       >
         <Link to={"/"}>
           <a
             role="tab"
             onClick={() => dispatch(moveToOne())}
-            className={`tab ${tab === 1 ? "tab-active" : ""} text-white`}
+            className={`tab ${tab === 1 ? 'text-white scale-105 border-b-2 border-yellow-500' : 'text-zinc-400 hover:text-zinc-200'} transition-all duration-200`}
           >
             Home
           </a>
@@ -197,7 +193,7 @@ function Navbar() {
           <a
             role="tab"
             onClick={() => dispatch(moveToTwo())}
-            className={`tab ${tab === 2 ? "tab-active" : ""} text-white`}
+            className={`tab ${tab === 2 ? 'text-white scale-105 border-b-2 border-yellow-500' : 'text-zinc-400 hover:text-zinc-200'} transition-all duration-200`}
           >
             Prodotti
           </a>
@@ -205,7 +201,7 @@ function Navbar() {
         <a
           role="tab"
           onClick={() => dispatch(moveToThree())}
-          className={`tab ${tab === 3 ? "tab-active" : ""} text-white`}
+          className={`tab ${tab === 3 ? 'text-white scale-105 border-b-2 border-yellow-500' : 'text-zinc-400 hover:text-zinc-200'} transition-all duration-200`}
         >
           Info
         </a>

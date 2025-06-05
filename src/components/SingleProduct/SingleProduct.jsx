@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { moveToTwo } from '../Navbar/NavbarSlice';
 import { visibleDetails } from '../ProductsDetails/ProductDetailsSlice';
-import { hiddenSingleProduct } from './SingleProductSlice.js';
+import { hiddenSingleProduct, setSelectedProduct } from './SingleProductSlice.js';
 import { addToCart } from '../Cart/CartSlice';
 import './SingleProduct.css';
 import { products } from '../../data/products';
@@ -84,6 +84,12 @@ const SingleProduct = ({
   // Funzione per ottenere le prime 10 parole
   const getFirst10Words = (text) => {
     return text.split(' ').slice(0, 10).join(' ') + '...';
+  };
+
+  const handleBuyNow = (product) => {
+    dispatch(setSelectedProduct(product));
+    // Forza il re-render scrollando in cima alla pagina
+    window.scrollTo(0, 0);
   };
 
   if (!selectedProduct) return <div>Caricamento...</div>;
@@ -408,8 +414,10 @@ const SingleProduct = ({
                   prodotti={products.filter(p => p.category === selectedProduct.category && p.id !== selectedProduct.id)}
                   category={selectedProduct.category}
                   useCarousel={true}
+                  visibleCount={1}
                   responsive={false}
-                  visibleCount={1}                    
+                  onBuyNow={handleBuyNow}
+                  limit={4}
                 />
               </div>
             </div>

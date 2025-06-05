@@ -134,27 +134,39 @@ useEffect(() => {
           {/* Page content here */}
           <label
             htmlFor="my-drawer-2"
-            className="btn btn-primary drawer-button lg:hidden mt-5"
+            className="btn bg-zinc-800 hover:bg-zinc-700 text-white border-none drawer-button lg:hidden mt-5 px-8"
           >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+            </svg>
             Filtri
           </label>
 
           {/* Dropdown Ordina */}
           <div className="dropdown dropdown-bottom mt-5 mr-40 w-full justify-end flex">
-            <div tabIndex={0} role="button" className="btn m-1">
-              Ordina↲
+            <div tabIndex={0} role="button" className="btn bg-zinc-800 hover:bg-zinc-700 text-white border-none m-1">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 4h13M3 8h9m-9 4h9m5-4v12m0 0l-4-4m4 4l4-4" />
+              </svg>
+              Ordina
             </div>
             <ul
               tabIndex={0}
-              className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm"
+              className="dropdown-content menu bg-zinc-800 rounded-xl z-[1] w-56 p-3 shadow-xl border border-zinc-700"
             >
-              <li>
-                <button onClick={handleSortLowToHigh}>
+              <li className="mb-1">
+                <button onClick={handleSortLowToHigh} className="text-zinc-200 hover:text-yellow-400 hover:bg-zinc-700 rounded-lg transition-colors duration-200">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 4h13M3 8h9m-9 4h9m5-4v12m0 0l-4-4m4 4l4-4" />
+                  </svg>
                   Dal più basso al più alto
                 </button>
               </li>
               <li>
-                <button onClick={handleSortHighToLow}>
+                <button onClick={handleSortHighToLow} className="text-zinc-200 hover:text-yellow-400 hover:bg-zinc-700 rounded-lg transition-colors duration-200">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 4h13M3 8h9m-9 4h9m5-4v12m0 0l-4-4m4 4l4-4" />
+                  </svg>
                   Dal più alto al più basso
                 </button>
               </li>
@@ -182,7 +194,7 @@ useEffect(() => {
               {[...Array(totalPages)].map((_, idx) => (
                 <input
                   key={idx}
-                  className="join-item btn btn-square"
+                  className={`join-item btn btn-square ${currentPage === idx + 1 ? 'btn-warning' : 'bg-amber-800 hover:bg-amber-700 text-white border-none'}`}
                   type="radio"
                   name="options"
                   aria-label={idx + 1}
@@ -202,123 +214,75 @@ useEffect(() => {
             aria-label="close sidebar"
             className="drawer-overlay"
           />
-          <ul className="menu bg-black glass text-white min-h-full w-80 p-4">
+          <ul className="menu min-h-full w-80 lg:w-96 p-6 lg:p-8 space-y-10 bg-gradient-to-br from-zinc-800/90 to-zinc-900/80 backdrop-blur-md border-r border-zinc-700/50">
             {/* MARCHI */}
-            <h1 className="text-center text-3xl font-bold border-b-2">
-              Marchi
-            </h1>
-            <label className="flex items-center space-x-2 mt-3 my-2 text-base">
-              <input
-                type="checkbox"
-                className="checkbox checkbox-warning"
-                checked={filterBrand === "Head"}
-                onChange={() => handleFilterBrand("Head")}
-              />
-              <span>Head</span>
-            </label>
-            <label className="flex items-center space-x-2 my-2 text-base">
-              <input
-                type="checkbox"
-                className="checkbox checkbox-warning"
-                checked={filterBrand === "Babolat"}
-                onChange={() => handleFilterBrand("Babolat")}
-              />
-              <span>Babolat</span>
-            </label>
-            <label className="flex items-center space-x-2 my-2 text-base">
-              <input
-                type="checkbox"
-                className="checkbox checkbox-warning"
-                checked={filterBrand === "Wilson"}
-                onChange={() => handleFilterBrand("Wilson")}
-              />
-              <span>Wilson</span>
-            </label>
-            <label className="flex items-center space-x-2 my-2 text-base">
-              <input
-                type="checkbox"
-                className="checkbox checkbox-warning"
-                checked={filterBrand === "Adidas"}
-                onChange={() => handleFilterBrand("Adidas")}
-              />
-              <span>Adidas</span>
-            </label>
-            <label className="flex items-center space-x-2 my-2 text-base">
-              <input
-                type="checkbox"
-                className="checkbox checkbox-warning"
-                checked={filterBrand === "Nike"}
-                onChange={() => handleFilterBrand("Nike")}
-              />
-              <span>Nike</span>
-            </label>
-            <label className="flex items-center space-x-2 my-2 text-base">
-              <input
-                type="checkbox"
-                className="checkbox checkbox-warning"
-                checked={filterBrand === "Asics"}
-                onChange={() => handleFilterBrand("Asics")}
-              />
-              <span>Asics</span>
-            </label>
+            <div className="space-y-6">
+              <div className="border-b border-zinc-700 pb-3">
+                <h2 className="text-xl lg:text-2xl font-bold text-white flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 4v12l-4-2-4 2V4M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  Marchi
+                </h2>
+              </div>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                {["Head", "Babolat", "Wilson", "Adidas", "Nike", "Asics"].map((brand) => (
+                  <label key={brand} className="flex items-center space-x-3 cursor-pointer group">
+                    <input
+                      type="checkbox"
+                      className="checkbox checkbox-warning border-2"
+                      checked={filterBrand === brand}
+                      onChange={() => handleFilterBrand(brand)}
+                    />
+                    <span className="text-base lg:text-lg text-zinc-300 group-hover:text-yellow-400 transition-colors duration-200">{brand}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
 
             {/* TIPO PRODOTTO */}
-            <h1 className="text-center text-3xl font-bold border-b-2 mt-5">
-              Tipo di prodotto
-            </h1>
-            <label className="flex items-center space-x-2 mt-3 my-2 text-base">
-              <input
-                type="checkbox"
-                className="checkbox checkbox-warning"
-                checked={category === "racchetta"}
-                onChange={() => handleCategory("racchetta", true)}
-              />
-              <span>Racchette</span>
-            </label>
-            <label className="flex items-center space-x-2 my-2 text-base">
-              <input
-                type="checkbox"
-                className="checkbox checkbox-warning"
-                checked={category === "maglietta"}
-                onChange={() => handleCategory("maglietta")}
-              />
-              <span>Magliette</span>
-            </label>
-            <label className="flex items-center space-x-2 my-2 text-base">
-              <input
-                type="checkbox"
-                className="checkbox checkbox-warning"
-                checked={category === "pantalone"}
-                onChange={() => handleCategory("pantalone")}
-              />
-              <span>Pantaloncini</span>
-            </label>
-            <label className="flex items-center space-x-2 my-2 text-base">
-              <input
-                type="checkbox"
-                className="checkbox checkbox-warning"
-                checked={category === "scarpa"}
-                onChange={() => handleCategory("scarpa")}
-              />
-              <span>Scarpe</span>
-            </label>
-            <label className="flex items-center space-x-2 my-2 text-base">
-              <input
-                type="checkbox"
-                className="checkbox checkbox-warning"
-                checked={category === "borsone"}
-                onChange={() => handleCategory("borsone")}
-              />
-              <span>Borsoni</span>
-            </label>
+            <div className="space-y-6">
+              <div className="border-b border-zinc-700 pb-3">
+                <h2 className="text-xl lg:text-2xl font-bold text-white flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                  </svg>
+                  Tipo di prodotto
+                </h2>
+              </div>
+              <div className="grid grid-cols-1 gap-4">
+                {[
+                  { id: "racchetta", label: "Racchette" },
+                  { id: "maglietta", label: "Magliette" },
+                  { id: "pantalone", label: "Pantaloncini" },
+                  { id: "scarpa", label: "Scarpe" },
+                  { id: "borsone", label: "Borsoni" }
+                ].map(({ id, label }) => (
+                  <label key={id} className="flex items-center space-x-3 cursor-pointer group">
+                    <input
+                      type="checkbox"
+                      className="checkbox checkbox-warning border-2"
+                      checked={category === id}
+                      onChange={() => handleCategory(id, id === "racchetta")}
+                    />
+                    <span className="text-base lg:text-lg text-zinc-300 group-hover:text-yellow-400 transition-colors duration-200">{label}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
 
             {/* Input Range per Racchette */}
             {showRacchetteRange && (
-              <>
-                <h1 className="text-center text-3xl font-bold border-b-2 mt-5">
-                  Bilanciamento Racchetta
-                </h1>
-                <div className="w-full max-w-xs mb-5">
+              <div className="space-y-6">
+                <div className="border-b border-zinc-700 pb-3">
+                  <h2 className="text-xl lg:text-2xl font-bold text-white flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                    </svg>
+                    Bilanciamento Racchetta
+                  </h2>
+                </div>
+                <div className="space-y-8 pt-2">
                   <input
                     type="range"
                     min={0}
@@ -330,49 +294,70 @@ useEffect(() => {
                         ? 50
                         : 100
                     }
-                    className="range range-warning mt-5"
+                    className="range range-warning"
                     step="50"
                     onChange={handleRacchetteRangeChange}
                   />
-                  <div className="flex justify-between px-2.5 mt-2 text-xs">
-                    <span>|</span>
-                    <span>|</span>
-                    <span>|</span>
-                  </div>
-                  <div className="flex justify-between px-2.5 mt-2 text-xs">
-                    <span>Manico</span>
-                    <span>Bilanciato</span>
-                    <span>Piattocorde</span>
+                  <div className="flex justify-between text-sm lg:text-base text-zinc-400">
+                    <span className="text-center">
+                      Manico
+                      <div className="w-px h-3 bg-zinc-600 mx-auto mt-2"></div>
+                    </span>
+                    <span className="text-center">
+                      Bilanciato
+                      <div className="w-px h-3 bg-zinc-600 mx-auto mt-2"></div>
+                    </span>
+                    <span className="text-center">
+                      Piattocorde
+                      <div className="w-px h-3 bg-zinc-600 mx-auto mt-2"></div>
+                    </span>
                   </div>
                 </div>
-              </>
+              </div>
             )}
 
             {/* PREZZO */}
-            <h1 className="text-center text-3xl font-bold border-b-2">
-              Prezzo
-            </h1>
-            <div className="flex flex-col items-center mt-3">
-              <label className="text-sm">Prezzo Minimo: €{priceRange[0]}</label>
-              <input
-                type="range"
-                min={0}
-                max={230}
-                value={priceRange[0]}
-                onChange={handlePriceRangeChange}
-                className="range range-warning mt-5"
-              />
+            <div className="space-y-6">
+              <div className="border-b border-zinc-700 pb-3">
+                <h2 className="text-xl lg:text-2xl font-bold text-white flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  Prezzo
+                </h2>
+              </div>
+              <div className="space-y-6 pt-2">
+                <div className="text-base lg:text-lg text-zinc-300">Prezzo Minimo: <span className="text-yellow-400 font-medium">€{priceRange[0]}</span></div>
+                <input
+                  type="range"
+                  min={0}
+                  max={230}
+                  value={priceRange[0]}
+                  onChange={handlePriceRangeChange}
+                  className="range range-warning"
+                />
+              </div>
             </div>
-            <h1 className="text-center text-3xl font-bold border-b-2 mt-2">
-              Promo
-            </h1>
-            <div className="flex justify-center items-center mt-5">
-              <input
-                type="checkbox"
-                checked={promoOnly}
-                onChange={handlePromoOnlyChange}
-                className="toggle border-white checked:border-orange-800 checked:bg-warning checked:text-orange-800"
-              />
+
+            {/* PROMO */}
+            <div className="space-y-6">
+              <div className="border-b border-zinc-700 pb-3">
+                <h2 className="text-xl lg:text-2xl font-bold text-white flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2zM10 8.5a.5.5 0 11-1 0 .5.5 0 011 0zm5 5a.5.5 0 11-1 0 .5.5 0 011 0z" />
+                  </svg>
+                  Promo
+                </h2>
+              </div>
+              <div className="flex items-center space-x-4">
+                <input
+                  type="checkbox"
+                  checked={promoOnly}
+                  onChange={handlePromoOnlyChange}
+                  className="toggle toggle-warning"
+                />
+                <span className="text-base lg:text-lg text-zinc-300">Mostra solo prodotti in promozione</span>
+              </div>
             </div>
           </ul>
         </div>

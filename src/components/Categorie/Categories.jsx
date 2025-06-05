@@ -20,6 +20,7 @@ function Categories({
   bilancio = null,
   promoOnly = false,
   searchTerm = null, // Nuovo prop per il termine di ricerca
+  onBuyNow = null // Add onBuyNow prop
 }) {
   const [slides, setSlides] = useState([]); 
   const [startIndex, setStartIndex] = useState(0);
@@ -104,12 +105,24 @@ function Categories({
 
   // Funzione per gestire il click su "Buy Now"
   const handleBuyNow = (product) => {
-    console.log("Buy Now click", product);
-    dispatch(hiddenDetails());
-    dispatch(visibleSingleProduct());
-    dispatch(setSelectedProduct(product));
-    dispatch(moveToTwo());
-    navigate("/Prodotti",{ state: { showSingle: true } });
+    if (onBuyNow) {
+      onBuyNow(product);
+    } else {
+      console.log("Buy Now click", product);
+      dispatch(hiddenDetails());
+      dispatch(visibleSingleProduct());
+      dispatch(setSelectedProduct(product));
+      dispatch(moveToTwo());
+      navigate("/Prodotti", { state: { showSingle: true } });
+    }
+  };
+
+  // Prevent scroll
+  const preventScroll = (e) => {
+    if (e.deltaY !== 0) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
   };
 
   // Mostra messaggio se non ci sono prodotti
@@ -157,7 +170,7 @@ function Categories({
                 )}
                 <p className="text-sm text-white">{getFirst10Words(product.description)}</p>
                 <div className="card-actions">
-                  <button className="btn btn-primary" onClick={() => handleBuyNow(product)}>Buy Now</button>
+                  <button className="btn bg-[rgb(255,72,39)] hover:bg-[rgb(230,65,35)] text-white border-none" onClick={() => handleBuyNow(product)}>Acquista ora</button>
                 </div>
               </div>
             </div>
@@ -169,7 +182,7 @@ function Categories({
 
   // Carousel
   let visibleSlides = slides.slice(startIndex, startIndex + visibleCards);
-  if (visibleSlides.length < visibleCards) {
+  if (visibleSlides.length < visibleCards && slides.length > 0) {
     visibleSlides = [
       ...visibleSlides,
       ...slides.slice(0, visibleCards - visibleSlides.length),
@@ -177,55 +190,76 @@ function Categories({
   }
 
   return (
-    <div className="carousel w-full relative mt-5">
-      <div className="flex justify-center items-center gap-2 flex-wrap mx-auto">
+    <div className="w-full relative mt-5" onWheel={preventScroll}>
+      <div className="flex justify-center items-center gap-4 flex-nowrap overflow-x-hidden mx-auto px-4">
         {visibleSlides.map((slide) => (
           <div
             key={slide.id}
-            className="card bg-base-100 w-72 shadow-2xl glass"
+            className="card bg-base-100 w-72 shadow-2xl glass transition-all duration-300 hover:scale-105 shrink-0"
+            onWheel={preventScroll}
           >
             <figure className="px-10 pt-10 h-40 flex items-center justify-center">
               <img
                 src={slide.image}
-                alt={slide.title}
-                className="rounded-xl max-h-full"
+                alt={slide.name}
+                className="rounded-xl max-h-full object-contain"
               />
             </figure>
-            <div className="card-body items-center text-center">
+            <div className="card-body items-center text-center p-4">
               {slide.promo && (
                 <div className="badge badge-secondary absolute top-2 left-2 z-50">
                   Promo
                 </div>
               )}
-              <h2 className="card-title">{slide.name}</h2>
+              <h2 className="card-title text-white text-lg mb-2">{slide.name}</h2>
               {slide.promo ? (
-                <span className="inline-flex">
-                  <p className="line-through text-gray-500 mr-2">
-                    ${slide.price + 20}
+                <span className="inline-flex items-center gap-2 mb-2">
+                  <p className="line-through text-gray-400">
+                    €{(slide.price + 20).toFixed(2)}
                   </p>
-                  <p className="text-green-500">${slide.price}</p>
+                  <p className="text-green-500">€{slide.price.toFixed(2)}</p>
                 </span>
               ) : (
-                <p className="text-sm font-normal">${slide.price}</p>
+                <p className="text-white mb-2">€{slide.price.toFixed(2)}</p>
               )}
-              <p className="text-sm text-white">{getFirst10Words(slide.description)}</p>
-              <div className="card-actions">
-                <button className="btn btn-primary" onClick={() => handleBuyNow(slide)}>Buy Now</button>
+              <p className="text-sm text-gray-300 mb-4">{getFirst10Words(slide.description)}</p>
+              <div className="card-actions w-full">
+                <button 
+                  className="btn bg-[rgb(255,72,39)] hover:bg-[rgb(230,65,35)] text-white border-none w-full"
+                  onClick={() => handleBuyNow(slide)}
+                >
+                  Acquista ora
+                </button>
               </div>
             </div>
           </div>
         ))}
       </div>
-      <div className="absolute left-5 top-1/2 transform -translate-y-1/2">
-        <button className="btn btn-circle" onClick={handlePrev}>
-          ❮
-        </button>
-      </div>
-      <div className="absolute right-5 top-1/2 transform -translate-y-1/2">
-        <button className="btn btn-circle" onClick={handleNext}>
-          ❯
-        </button>
-      </div>
+
+      {/* Navigation arrows */}
+      <button
+        className="btn btn-circle absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-[rgb(255,72,39)] hover:bg-[rgb(230,65,35)] border-none"
+        onClick={handlePrev}
+      >
+        ❮
+      </button>
+      <button
+        className="btn btn-circle absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-[rgb(255,72,39)] hover:bg-[rgb(230,65,35)] border-none"
+        onClick={handleNext}
+      >
+        ❯
+      </button>
+
+      <style jsx>{`
+        .overflow-x-hidden {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+          overflow: hidden;
+        }
+        .overflow-x-hidden::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
     </div>
   );
 }

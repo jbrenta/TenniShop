@@ -37,7 +37,7 @@ const ProductCard = ({ product, onBuyNow, className = '' }) => {
         <p className="text-sm text-gray-600">{getFirst10Words(product.description)}</p>
         <div className="card-actions">
           <button 
-            className="btn btn-primary"
+            className="btn bg-yellow-500 hover:bg-yellow-600 text-black border-none"
             onClick={() => onBuyNow(product)}
           >
             Buy Now
