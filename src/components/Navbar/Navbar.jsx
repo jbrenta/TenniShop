@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { moveToOne, moveToTwo, moveToThree, showSearch, setSearchTerm } from "./NavbarSlice";
-import { showSideBar } from "../Slidebar/SideBarSlice";
 import { openCart } from "../Cart/CartSlice";
 import { hidden } from "../../pages/Home/HomeSlice";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { products } from "../../data/products";
+import { toggleMobileMenu } from "../MobileMenu/MobileMenuSlice";
 
 function Navbar() {
   const dispatch = useDispatch();
@@ -83,25 +83,31 @@ function Navbar() {
   return (
     <>
       <div className="navbar bg-gradient-to-r from-zinc-900 via-zinc-800 to-zinc-900 backdrop-blur-md border-b border-zinc-800/50 shadow-lg">
+        {/* Mobile Menu Button - only visible on mobile */}
         <button
-          className="mr-2 md:hidden hover:bg-zinc-800/50 p-2 rounded-lg transition-colors duration-200"
-          onClick={() => {
-            dispatch(showSideBar());
-            dispatch(hidden());
-          }}
+          className="md:hidden btn btn-ghost btn-circle hover:bg-zinc-800/50 transition-colors duration-200"
+          onClick={() => dispatch(toggleMobileMenu())}
         >
           <svg
-            className="swap-off fill-current"
             xmlns="http://www.w3.org/2000/svg"
-            width="32"
-            height="32"
-            viewBox="0 0 512 512"
+            className="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
           >
-            <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
           </svg>
         </button>
+
         <div className="flex-1">
-          <a className="btn btn-ghost text-xl font-bold bg-gradient-to-r from-yellow-200 to-yellow-500 bg-clip-text text-transparent hover:from-yellow-300 hover:to-yellow-600 transition-all duration-300">TenniShop</a>
+          <Link to="/" className="btn btn-ghost text-xl font-bold bg-gradient-to-r from-yellow-200 to-yellow-500 bg-clip-text text-transparent hover:from-yellow-300 hover:to-yellow-600 transition-all duration-300">
+            TenniShop
+          </Link>
         </div>
         {tab === 1 && (
           <div className="hidden md:flex justify-center w-full my-2">
@@ -147,10 +153,22 @@ function Navbar() {
             </button>
 
             <div className="dropdown dropdown-end">
+              <Link to="/profile" className="md:hidden">
+                <div
+                  className="btn btn-ghost btn-circle avatar ring-2 ring-zinc-700 hover:ring-yellow-500/50 transition-all duration-200"
+                >
+                  <div className="w-10 rounded-full">
+                    <img
+                      alt="Tailwind CSS Navbar component"
+                      src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+                    />
+                  </div>
+                </div>
+              </Link>
               <div
                 tabIndex={0}
                 role="button"
-                className="btn btn-ghost btn-circle avatar ring-2 ring-zinc-700 hover:ring-yellow-500/50 transition-all duration-200"
+                className="hidden md:flex btn btn-ghost btn-circle avatar ring-2 ring-zinc-700 hover:ring-yellow-500/50 transition-all duration-200"
               >
                 <div className="w-10 rounded-full">
                   <img
@@ -161,7 +179,7 @@ function Navbar() {
               </div>
               <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow-lg bg-zinc-800/95 backdrop-blur-md rounded-box w-52 border border-zinc-700"
+                className="hidden md:menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow-lg bg-zinc-800/95 backdrop-blur-md rounded-box w-52 border border-zinc-700"
               >
                 <li>
                   <Link to="/profile" className="hover:bg-zinc-700/50">
@@ -196,7 +214,7 @@ function Navbar() {
             Prodotti
           </a>
         </Link>
-        <Link to="/profile">
+        <Link to={"/profile"}>
           <a
             role="tab"
             onClick={() => dispatch(moveToThree())}
@@ -206,113 +224,8 @@ function Navbar() {
           </a>
         </Link>
       </div>
-      {location.pathname === "/" && tab === 1 && (
-        <div className="w-full mx-auto hidden md:flex bg-zinc-900 shadow-lg">
-          <div className="dropdown dropdown-hover flex-1">
-            <div 
-              tabIndex={0}
-              role="button"
-              className="btn flex justify-center rounded-none w-full bg-zinc-900 hover:bg-zinc-800 border-none text-white font-medium tracking-wide px-8 py-4 transition-all duration-300 relative group"
-            >
-              <span className="relative z-10">Racchette</span>
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-500 group-hover:w-full transition-all duration-300"></span>
-            </div>
-            <ul
-              tabIndex={0}
-              className="dropdown-content menu rounded-md z-10 w-full p-2 shadow-xl bg-zinc-900 border border-zinc-800"
-            >
-              <li className="hover:bg-zinc-800 rounded-md transition-colors duration-200">
-                <a onClick={() => goToProdottiConFiltro("racchetta", "Head")} className="text-white hover:text-yellow-500 py-3">Head</a>
-              </li>
-              <li className="hover:bg-zinc-800 rounded-md transition-colors duration-200">
-                <a onClick={() => goToProdottiConFiltro("racchetta", "Babolat")} className="text-white hover:text-yellow-500 py-3">
-                  Babolat
-                </a>
-              </li>
-              <li className="hover:bg-zinc-800 rounded-md transition-colors duration-200">
-                <a onClick={() => goToProdottiConFiltro("racchetta", "Wilson")} className="text-white hover:text-yellow-500 py-3">Wilson</a>
-              </li>
-            </ul>
-          </div>
-
-          <div className="dropdown dropdown-hover flex-1">
-            <div
-              tabIndex={0}
-              role="button"
-              className="btn flex justify-center rounded-none w-full bg-zinc-900 hover:bg-zinc-800 border-none text-white font-medium tracking-wide px-8 py-4 transition-all duration-300 relative group"
-            >
-              <span className="relative z-10">Abbigliamento</span>
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-500 group-hover:w-full transition-all duration-300"></span>
-            </div>
-            <ul
-              tabIndex={0}
-              className="dropdown-content menu rounded-md z-10 w-full p-2 shadow-xl bg-zinc-900 border border-zinc-800"
-            >
-              <li className="hover:bg-zinc-800 rounded-md transition-colors duration-200">
-                <a onClick={() => goToProdottiConFiltro("maglietta")} className="text-white hover:text-yellow-500 py-3">
-                  Magliette
-                </a>
-              </li>
-              <li className="hover:bg-zinc-800 rounded-md transition-colors duration-200">
-                <a onClick={() => goToProdottiConFiltro("pantalone")} className="text-white hover:text-yellow-500 py-3">
-                  Pantaloncini
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div className="dropdown dropdown-hover flex-1">
-            <div
-              tabIndex={0}
-              role="button"
-              className="btn flex justify-center rounded-none w-full bg-zinc-900 hover:bg-zinc-800 border-none text-white font-medium tracking-wide px-8 py-4 transition-all duration-300 relative group"
-            >
-              <span className="relative z-10">Scarpe</span>
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-500 group-hover:w-full transition-all duration-300"></span>
-            </div>
-            <ul
-              tabIndex={0}
-              className="dropdown-content menu rounded-md z-10 w-full p-2 shadow-xl bg-zinc-900 border border-zinc-800"
-            >
-              <li className="hover:bg-zinc-800 rounded-md transition-colors duration-200">
-                <a onClick={() => goToProdottiConFiltro("scarpa","Asics")} className="text-white hover:text-yellow-500 py-3">Asics</a>
-              </li>
-              <li className="hover:bg-zinc-800 rounded-md transition-colors duration-200">
-                <a onClick={() => goToProdottiConFiltro("scarpa","Nike")} className="text-white hover:text-yellow-500 py-3">Nike</a>
-              </li>
-              <li className="hover:bg-zinc-800 rounded-md transition-colors duration-200">
-                <a onClick={() => goToProdottiConFiltro("scarpa","Adidas")} className="text-white hover:text-yellow-500 py-3">Adidas</a>
-              </li>
-            </ul>
-          </div>
-
-          <div className="dropdown dropdown-hover flex-1">
-            <div
-              tabIndex={0}
-              role="button"
-              className="btn flex justify-center rounded-none w-full bg-zinc-900 hover:bg-zinc-800 border-none text-white font-medium tracking-wide px-8 py-4 transition-all duration-300 relative group"
-            >
-              <span className="relative z-10">Borsoni</span>
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-500 group-hover:w-full transition-all duration-300"></span>
-            </div>
-            <ul
-              tabIndex={0}
-              className="dropdown-content menu rounded-md z-10 w-full p-2 shadow-xl bg-zinc-900 border border-zinc-800"
-            >
-              <li className="hover:bg-zinc-800 rounded-md transition-colors duration-200">
-                <a onClick={() => goToProdottiConFiltro("borsone", "Head")} className="text-white hover:text-yellow-500 py-3">Head</a>
-              </li>
-              <li className="hover:bg-zinc-800 rounded-md transition-colors duration-200">
-                <a onClick={() => goToProdottiConFiltro("borsone", "Wilson")} className="text-white hover:text-yellow-500 py-3">Wilson</a>
-              </li>
-              <li className="hover:bg-zinc-800 rounded-md transition-colors duration-200">
-                <a onClick={() => goToProdottiConFiltro("borsone", "Babolat")} className="text-white hover:text-yellow-500 py-3">Babolat</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      )}
     </>
   );
 }
+
 export default Navbar;

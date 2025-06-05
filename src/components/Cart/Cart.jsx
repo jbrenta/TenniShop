@@ -79,11 +79,11 @@ const Cart = () => {
                                             <div className="flex gap-4">
                                                 {/* Product Image */}
                                                 <div className="relative w-24 h-24 bg-zinc-900/50 rounded-lg overflow-hidden">
-                                                    <img 
-                                                        src={item.image} 
-                                                        alt={item.name} 
+                                                <img 
+                                                    src={item.image} 
+                                                    alt={item.name} 
                                                         className="w-full h-full object-contain p-2"
-                                                    />
+                                                />
                                                 </div>
                                                 
                                                 {/* Product Details */}
@@ -105,21 +105,21 @@ const Cart = () => {
                                                     
                                                     <div className="flex justify-between items-end mt-2">
                                                         <div className="flex items-center gap-2 bg-zinc-900/50 rounded-lg p-1">
-                                                            <button 
+                                                        <button 
                                                                 className="btn btn-xs btn-circle bg-zinc-800 border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600"
-                                                                onClick={() => handleQuantityChange(item.id, item.quantity - 1)}
-                                                                disabled={item.quantity <= 1}
-                                                            >
-                                                                -
-                                                            </button>
+                                                            onClick={() => handleQuantityChange(item.id, item.quantity - 1)}
+                                                            disabled={item.quantity <= 1}
+                                                        >
+                                                            -
+                                                        </button>
                                                             <span className="w-8 text-center text-sm">{item.quantity}</span>
-                                                            <button 
+                                                        <button 
                                                                 className="btn btn-xs btn-circle bg-zinc-800 border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600"
-                                                                onClick={() => handleQuantityChange(item.id, item.quantity + 1)}
-                                                                disabled={item.quantity >= 9}
-                                                            >
-                                                                +
-                                                            </button>
+                                                            onClick={() => handleQuantityChange(item.id, item.quantity + 1)}
+                                                            disabled={item.quantity >= 9}
+                                                        >
+                                                            +
+                                                        </button>
                                                         </div>
                                                         <p className="text-yellow-500 font-semibold">€{(item.price * item.quantity).toFixed(2)}</p>
                                                     </div>

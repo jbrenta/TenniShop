@@ -1,8 +1,13 @@
 import React from 'react';
-import SidebarLayout from './components/Layout/SidebarLayout';
+import Layout from './components/Layout/Layout';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 function App() {
-  return <SidebarLayout />;
+  return (
+    <Router>
+      <Layout />
+    </Router>
+  );
 }
 
 export default App; 

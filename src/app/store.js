@@ -4,11 +4,11 @@ import storage from 'redux-persist/lib/storage'; // Usa localStorage
 import { combineReducers } from 'redux';
 import { NavbarReducer } from '../components/Navbar/NavbarSlice';
 import { HomeReducer } from '../pages/Home/HomeSlice';
-import { SideBarReducer } from '../components/Slidebar/SideBarSlice';
 import { ProdottiReducer } from '../pages/Prodotti/ProdottiSlice';
 import { ProductDetailsReducer } from '../components/ProductsDetails/ProductDetailsSlice';
 import { SingleProductReducer } from '../components/SingleProduct/SingleProductSlice';
 import cartReducer from '../components/Cart/CartSlice';
+import mobileMenuReducer from '../components/MobileMenu/MobileMenuSlice';
 
 // Configurazione di redux-persist
 const persistConfig = {
@@ -21,11 +21,11 @@ const persistConfig = {
 const rootReducer = combineReducers({
   navbar: NavbarReducer,
   home: HomeReducer,
-  sidebar: SideBarReducer,
   productDetails: ProductDetailsReducer,
   prodotti: ProdottiReducer,
   singleProduct: SingleProductReducer,
   cart: cartReducer,
+  mobileMenu: mobileMenuReducer,
 });
 
 // Applica redux-persist al rootReducer

@@ -138,39 +138,44 @@ function Categories({
   if (!useCarousel) {
     return (
       <div className="container mx-auto px-4 py-6">
-        <div className="flex flex-wrap justify-center gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
           {slides.map((product) => (
             <div
               key={product.id}
-              className="card w-72 bg-base-100 shadow-md hover:shadow-xl transition-shadow glass"
+              className="card bg-base-100 shadow-md hover:shadow-xl transition-shadow glass"
             >
-              <figure className="px-10 pt-10 h-40 flex items-center justify-center">
+              <figure className="px-4 pt-4 h-24 sm:h-32 md:h-40 flex items-center justify-center">
                 <img
                   src={product.image}
                   alt={product.title}
-                  className="rounded-xl max-h-full"
+                  className="rounded-xl max-h-full object-contain"
                 />
               </figure>
-              <div className="card-body items-center text-center">
+              <div className="card-body items-center text-center p-3 sm:p-4">
                 {product.promo && (
-                  <div className="badge badge-secondary absolute top-2 left-2 z-50">
+                  <div className="badge badge-secondary absolute top-2 left-2 z-50 text-xs">
                     Promo
                   </div>
                 )}
-                <h2 className="card-title">{product.name}</h2>
+                <h2 className="card-title text-sm sm:text-base md:text-lg mb-1">{product.name}</h2>
                 {product.promo ? (
-                  <span className="inline-flex">
-                    <p className="line-through text-gray-500 mr-2">
-                      ${product.price + 20}
+                  <span className="inline-flex items-center gap-1 sm:gap-2 mb-1">
+                    <p className="line-through text-gray-500 text-xs sm:text-sm">
+                      €{(product.price + 20).toFixed(2)}
                     </p>
-                    <p className="text-green-500">${product.price}</p>
+                    <p className="text-green-500 text-xs sm:text-sm">€{product.price.toFixed(2)}</p>
                   </span>
                 ) : (
-                  <p className="text-sm font-normal">${product.price}</p>
+                  <p className="text-xs sm:text-sm mb-1">€{product.price.toFixed(2)}</p>
                 )}
-                <p className="text-sm text-white">{getFirst10Words(product.description)}</p>
-                <div className="card-actions">
-                  <button className="btn bg-[rgb(255,72,39)] hover:bg-[rgb(230,65,35)] text-white border-none" onClick={() => handleBuyNow(product)}>Acquista ora</button>
+                <p className="text-xs text-white mb-2 line-clamp-2">{getFirst10Words(product.description)}</p>
+                <div className="card-actions w-full">
+                  <button 
+                    className="btn btn-sm w-full bg-[rgb(255,72,39)] hover:bg-[rgb(230,65,35)] text-white border-none text-xs sm:text-sm" 
+                    onClick={() => handleBuyNow(product)}
+                  >
+                    Acquista ora
+                  </button>
                 </div>
               </div>
             </div>

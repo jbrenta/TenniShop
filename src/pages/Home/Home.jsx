@@ -47,9 +47,6 @@ function Home() {
   // Custom hooks
   const counter = useCountdown();
   
-  // Global state
-  const side = useSelector((state) => state.sidebar.visibility);
-
   /**
    * Banner Carousel Effect
    * Automatically cycles through banner images every 3 seconds
@@ -202,7 +199,7 @@ function Home() {
       </div>
 
       {/* Daily Offer Section */}
-      <div className="w-full bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 mt-6 md:mt-10 py-8 md:py-16 relative overflow-hidden">
+      <div className="w-full bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 mt-6 md:mt-10 py-4 md:py-16 relative overflow-hidden">
         {/* Subtle grid pattern overlay */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNNTkuNSA2MEgwVjBoNjB2NjBoLS41ek0wIDBoNjB2NjBIMFYweiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==')] opacity-50"></div>
         
@@ -215,18 +212,18 @@ function Home() {
         <div className="max-w-[1000px] mx-auto px-4">
           <div className="flex flex-col items-center text-center relative">
             {/* Enhanced Title Section */}
-            <div className="mb-8 md:mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <div className="mb-4 md:mb-12">
+              <h2 className="text-2xl md:text-4xl font-bold text-white mb-2 md:mb-4">
                 Offerta del Giorno
-                <div className="h-1 w-24 bg-yellow-400 mx-auto mt-3 rounded-full"></div>
+                <div className="h-1 w-24 bg-yellow-400 mx-auto mt-2 md:mt-3 rounded-full"></div>
               </h2>
-              <p className="text-sm md:text-base text-zinc-300 max-w-2xl mx-auto">
+              <p className="text-xs md:text-base text-zinc-300 max-w-2xl mx-auto">
                 Approfitta di questa offerta esclusiva, disponibile solo per le prossime:
               </p>
             </div>
 
             {/* Enhanced Countdown Timer */}
-            <div className="grid grid-cols-3 gap-3 md:gap-5 mb-8 md:mb-12">
+            <div className="grid grid-cols-3 gap-2 md:gap-5 mb-4 md:mb-12">
               {[
                 { label: "ORE", value: counter.hours },
                 { label: "MINUTI", value: counter.minutes },
@@ -234,22 +231,22 @@ function Home() {
               ].map(({ label, value }) => (
                 <div
                   key={label}
-                  className="flex flex-col items-center p-3 md:p-4 bg-zinc-800/80 backdrop-blur-sm rounded-xl border border-yellow-500/10 min-w-[80px] md:min-w-[100px]"
+                  className="flex flex-col items-center p-2 md:p-4 bg-zinc-800/80 backdrop-blur-sm rounded-xl border border-yellow-500/10 min-w-[60px] md:min-w-[100px]"
                 >
-                  <span className="font-mono text-2xl md:text-3xl lg:text-4xl text-yellow-400 font-bold tabular-nums">
+                  <span className="font-mono text-xl md:text-3xl lg:text-4xl text-yellow-400 font-bold tabular-nums">
                     {String(value).padStart(2, '0')}
                   </span>
-                  <span className="text-[10px] md:text-xs font-medium mt-1 text-zinc-400 uppercase tracking-wider">{label}</span>
+                  <span className="text-[8px] md:text-xs font-medium mt-0.5 md:mt-1 text-zinc-400 uppercase tracking-wider">{label}</span>
                 </div>
               ))}
             </div>
 
             {/* Enhanced Featured Product */}
             {randomPromoSlides.length > 0 && (
-              <div className="bg-zinc-800/50 backdrop-blur-md rounded-2xl p-4 md:p-8 w-full max-w-3xl border border-zinc-700/50 shadow-xl">
-                <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
+              <div className="bg-zinc-800/50 backdrop-blur-md rounded-2xl p-3 md:p-8 w-full max-w-3xl border border-zinc-700/50 shadow-xl">
+                <div className="flex flex-col md:flex-row items-center gap-3 md:gap-8">
                   {/* Product Image */}
-                  <div className="w-full md:w-1/2 relative group">
+                  <div className="w-[50%] sm:w-[60%] md:w-1/2 relative group">
                     <div className="absolute inset-0 bg-gradient-to-tr from-yellow-500/10 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div className="relative overflow-hidden rounded-xl">
                       <img
@@ -258,54 +255,54 @@ function Home() {
                         className="w-full h-auto rounded-xl shadow-lg transform group-hover:scale-105 transition-transform duration-500"
                       />
                       {/* Discount Badge */}
-                      <div className="absolute top-3 right-3 bg-yellow-500 text-black text-xs md:text-sm font-bold px-3 py-1.5 rounded-full shadow-lg">
+                      <div className="absolute top-2 right-2 md:top-3 md:right-3 bg-yellow-500 text-black text-[10px] md:text-sm font-bold px-2 md:px-3 py-1 md:py-1.5 rounded-full shadow-lg">
                         -20%
                       </div>
                     </div>
                   </div>
 
                   {/* Product Info */}
-                  <div className="w-full md:w-1/2 text-left space-y-4">
-                    <div className="space-y-1">
-                      <p className="text-yellow-400 text-sm md:text-base font-medium">
+                  <div className="w-full md:w-1/2 text-left space-y-2 md:space-y-4">
+                    <div className="space-y-0.5 md:space-y-1">
+                      <p className="text-yellow-400 text-xs md:text-base font-medium">
                         {randomPromoSlides[0].brand}
                       </p>
-                      <h3 className="text-xl md:text-2xl font-bold text-white">
+                      <h3 className="text-lg md:text-2xl font-bold text-white">
                         {randomPromoSlides[0].name}
                       </h3>
                     </div>
 
                     {/* Price Section */}
-                    <div className="space-y-2">
-                      <div className="flex items-baseline gap-3">
-                        <span className="text-2xl md:text-3xl font-bold text-white">
+                    <div className="space-y-1 md:space-y-2">
+                      <div className="flex items-baseline gap-2 md:gap-3">
+                        <span className="text-xl md:text-3xl font-bold text-white">
                           €{(randomPromoSlides[0].price * 0.8).toFixed(2)}
                         </span>
-                        <span className="text-base md:text-lg text-zinc-500 line-through">
+                        <span className="text-sm md:text-lg text-zinc-500 line-through">
                           €{randomPromoSlides[0].price.toFixed(2)}
                         </span>
                       </div>
-                      <p className="text-sm text-zinc-400">
+                      <p className="text-xs md:text-sm text-zinc-400">
                         Risparmi: €{(randomPromoSlides[0].price * 0.2).toFixed(2)}
                       </p>
                     </div>
 
                     {/* Features List */}
-                    <ul className="space-y-2 py-2">
-                      <li className="flex items-center text-sm text-zinc-300">
-                        <svg className="w-4 h-4 text-yellow-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <ul className="space-y-1 md:space-y-2 py-1 md:py-2">
+                      <li className="flex items-center text-xs md:text-sm text-zinc-300">
+                        <svg className="w-3 h-3 md:w-4 md:h-4 text-yellow-400 mr-1 md:mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                         </svg>
                         Spedizione gratuita
                       </li>
-                      <li className="flex items-center text-sm text-zinc-300">
-                        <svg className="w-4 h-4 text-yellow-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <li className="flex items-center text-xs md:text-sm text-zinc-300">
+                        <svg className="w-3 h-3 md:w-4 md:h-4 text-yellow-400 mr-1 md:mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                         </svg>
                         Disponibilità immediata
                       </li>
-                      <li className="flex items-center text-sm text-zinc-300">
-                        <svg className="w-4 h-4 text-yellow-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <li className="flex items-center text-xs md:text-sm text-zinc-300">
+                        <svg className="w-3 h-3 md:w-4 md:h-4 text-yellow-400 mr-1 md:mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                         </svg>
                         Garanzia 2 anni
@@ -315,10 +312,10 @@ function Home() {
                     {/* Action Button */}
                     <button
                       onClick={() => goToProdottiConFiltro(randomPromoSlides[0].category, randomPromoSlides[0].brand)}
-                      className="w-full bg-gradient-to-r from-yellow-500 to-yellow-400 hover:from-yellow-400 hover:to-yellow-500 text-black font-bold px-6 py-3 rounded-xl transform hover:scale-[1.02] transition-all duration-200 shadow-lg shadow-yellow-500/20 flex items-center justify-center gap-2"
+                      className="w-full bg-gradient-to-r from-yellow-500 to-yellow-400 hover:from-yellow-400 hover:to-yellow-500 text-black font-bold px-4 md:px-6 py-2 md:py-3 rounded-xl transform hover:scale-[1.02] transition-all duration-200 shadow-lg shadow-yellow-500/20 flex items-center justify-center gap-2 text-sm md:text-base"
                     >
                       <span>Approfitta Ora</span>
-                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className="w-3 h-3 md:w-4 md:h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       </svg>
                     </button>
