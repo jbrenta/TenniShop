@@ -5,11 +5,20 @@
 @layer components {
     /* NAVBAR */
     .navbar{
-        @apply p-4 text-white  px-1
-
+        @apply p-4 text-white px-1
     }
+
+    /* Ensure navbar links stay white on mobile */
+    .tabs .tab {
+        @apply text-white hover:text-white;
+    }
+
+    .tabs .tab.tab-active {
+        @apply text-white border-white;
+    }
+
     #root{
-        @apply  bg-zinc-900 text-white
+        @apply bg-zinc-900 text-white
     }
     .logo-gradient {
         mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
