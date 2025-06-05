@@ -8,6 +8,7 @@ import { createHashRouter, RouterProvider } from 'react-router-dom';
 import Layout from './components/Layout/Layout';
 import Home from './pages/Home/Home';
 import Prodotti from './pages/Prodotti/Prodotti';
+import Profile from './pages/Profile/Profile';
 
 const router = createHashRouter([
   {
@@ -21,6 +22,10 @@ const router = createHashRouter([
       {
         path: 'Prodotti',
         element: <Prodotti />
+      },
+      {
+        path: 'profile',
+        element: <Profile />
       }
     ]
   }

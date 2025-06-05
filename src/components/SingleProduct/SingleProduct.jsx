@@ -111,6 +111,12 @@ const SingleProduct = ({
       <div className="product-container">
         {/* Main content area - scrollable */}
         <div className="main-content">
+          {/* Product Title Header */}
+          <div className="product-title-header">
+            <span className="product-brand">{selectedProduct.brand}</span>
+            <h1>{selectedProduct.name}</h1>
+          </div>
+
           {/* Immagine e caratteristiche */}
           <div className="product-image-section" style={{
             width: '100%',
@@ -408,7 +414,7 @@ const SingleProduct = ({
                 width: '100%',
                 maxWidth: '100%',
                 overflowX: 'hidden',
-                border: 'none'
+                border: 'none',
               }}>
                 <Categories
                   prodotti={products.filter(p => p.category === selectedProduct.category && p.id !== selectedProduct.id)}
@@ -418,6 +424,7 @@ const SingleProduct = ({
                   responsive={false}
                   onBuyNow={handleBuyNow}
                   limit={4}
+                  className="glass bg-none"
                 />
               </div>
             </div>

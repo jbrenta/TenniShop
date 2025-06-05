@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer(){
     return(
-        <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content p-10">
+        <footer className="footer sm:footer-horizontal bg-gradient-to-r from-zinc-900 via-zinc-800 to-zinc-900 backdrop-blur-md border-t border-zinc-800/50 shadow-lg text-neutral-content p-10">
   <aside>
     <svg
       width="50"

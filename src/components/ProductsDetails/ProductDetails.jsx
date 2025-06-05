@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Categories from "../Categorie/Categories";
+import Footer from "../Footer/Footer";
 import { products } from "../../data/products";
 import { useLocation } from "react-router-dom";
 
@@ -208,7 +209,7 @@ useEffect(() => {
         </div>
 
         {/* Drawer Sidebar */}
-        <div className="drawer-side mt-10">
+        <div className="drawer-side">
           <label
             htmlFor="my-drawer-2"
             aria-label="close sidebar"
@@ -362,6 +363,7 @@ useEffect(() => {
           </ul>
         </div>
       </div>
+      <Footer></Footer>
     </>
   );
 }

@@ -164,13 +164,11 @@ function Navbar() {
                 className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow-lg bg-zinc-800/95 backdrop-blur-md rounded-box w-52 border border-zinc-700"
               >
                 <li>
-                  <a className="hover:bg-zinc-700/50">
+                  <Link to="/profile" className="hover:bg-zinc-700/50">
                     Profile
                     <span className="badge bg-yellow-500 text-black border-none">New</span>
-                  </a>
+                  </Link>
                 </li>
-                <li><a className="hover:bg-zinc-700/50">Settings</a></li>
-                <li><a className="hover:bg-zinc-700/50">Logout</a></li>
               </ul>
             </div>
           </div>
@@ -184,7 +182,7 @@ function Navbar() {
           <a
             role="tab"
             onClick={() => dispatch(moveToOne())}
-            className={`tab ${tab === 1 ? 'text-white scale-105 border-b-2 border-yellow-500' : 'text-zinc-400 hover:text-zinc-200'} transition-all duration-200`}
+            className={`tab ${tab === 1 ? 'text-white scale-105 border-b-2 border-yellow-500' : 'text-white hover:text-white'} transition-all duration-200`}
           >
             Home
           </a>
@@ -193,18 +191,20 @@ function Navbar() {
           <a
             role="tab"
             onClick={() => dispatch(moveToTwo())}
-            className={`tab ${tab === 2 ? 'text-white scale-105 border-b-2 border-yellow-500' : 'text-zinc-400 hover:text-zinc-200'} transition-all duration-200`}
+            className={`tab ${tab === 2 ? 'text-white scale-105 border-b-2 border-yellow-500' : 'text-white hover:text-white'} transition-all duration-200`}
           >
             Prodotti
           </a>
         </Link>
-        <a
-          role="tab"
-          onClick={() => dispatch(moveToThree())}
-          className={`tab ${tab === 3 ? 'text-white scale-105 border-b-2 border-yellow-500' : 'text-zinc-400 hover:text-zinc-200'} transition-all duration-200`}
-        >
-          Info
-        </a>
+        <Link to="/profile">
+          <a
+            role="tab"
+            onClick={() => dispatch(moveToThree())}
+            className={`tab ${tab === 3 ? 'text-white scale-105 border-b-2 border-yellow-500' : 'text-white hover:text-white'} transition-all duration-200`}
+          >
+            Info
+          </a>
+        </Link>
       </div>
       {location.pathname === "/" && tab === 1 && (
         <div className="w-full mx-auto hidden md:flex bg-zinc-900 shadow-lg">

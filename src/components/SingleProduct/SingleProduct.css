@@ -850,7 +850,7 @@
 
 /* Stili per il testo nelle card dei prodotti simili */
 .similar-products-container .card {
-  background: white;
+  color: #ffffff;
   border-radius: 0.5rem;
   min-width: 220px; /* o la larghezza che preferisci */
   transition: all 0.2s ease;
@@ -863,11 +863,11 @@
 }
 
 .similar-products-container .card .card-body {
-  color: #000000 !important;
+  color: #ffffff !important;
 }
 
 .similar-products-container .card .card-body p {
-  color: #000000 !important;
+  color: #ffffff !important;
 }
 
 /* Stili per la descrizione del prodotto principale */
@@ -1693,5 +1693,50 @@
 
   .add-to-cart-text {
     font-size: 0.8125rem;
+  }
+}
+
+/* Product Title Header */
+.product-title-header {
+  width: 100%;
+  background-color: #2d2d2d;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1rem;
+  padding: 1.5rem;
+  border: 1px solid #3d3d3d;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.product-title-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: -0.025em;
+}
+
+.product-title-header .product-brand {
+  color: #b3b3b3;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .product-title-header h1 {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-title-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .product-title-header {
+    padding: 1rem;
   }
 } 
