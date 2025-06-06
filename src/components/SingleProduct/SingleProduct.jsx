@@ -8,7 +8,6 @@ import { addToCart } from '../Cart/CartSlice';
 import './SingleProduct.css';
 import { products } from '../../data/products';
 import Categories from '../Categorie/Categories';
-import Footer from '../Footer/Footer';
 
 const SingleProduct = ({
   width = 400,
@@ -100,7 +99,7 @@ const SingleProduct = ({
 
   return (
     <>
-      <div className="breadcrumbs-container max-w-[1200px] mx-auto p-4 mt-5">
+      <div className="breadcrumbs-container max-w-[1225px] mx-auto p-4 mt-5">
         <ul className="text-sm breadcrumbs inline-flex space-x-2">
           <li><a onClick={handleBackToProducts} className="text-white hover:text-gray-800">Prodotti</a></li>
           <li className="text-white">{selectedProduct.category}</li>
@@ -179,7 +178,7 @@ const SingleProduct = ({
                         top: rectTop,
                         width: rectW,
                         height: rectH,
-                        border: '2px solid #f50057',
+                        border: '2px solid #eab308',
                         background: 'rgba(245,0,87,0.15)',
                         pointerEvents: 'none',
                         boxSizing: 'border-box',
@@ -214,7 +213,7 @@ const SingleProduct = ({
                     color: '#ffffff',
                     textAlign: 'center',
                     letterSpacing: '-0.025em',
-                    borderBottom: '2px solid #ff6347',
+                    borderBottom: '2px solid #eab308',
                     paddingBottom: '0.75rem',
                     textTransform: 'uppercase'
                   }}>
@@ -306,7 +305,7 @@ const SingleProduct = ({
                   color: '#ffffff',
                   textAlign: 'center',
                   letterSpacing: '-0.025em',
-                  borderBottom: '2px solid #ff6347',
+                  borderBottom: '2px solid #eab308',
                   paddingBottom: '0.75rem',
                   textTransform: 'uppercase'
                 }}>
@@ -332,7 +331,7 @@ const SingleProduct = ({
                       <button 
                         onClick={() => setIsDescriptionExpanded(false)}
                         style={{
-                          color: '#ff6347',
+                          color: '#eab308',
                           fontWeight: '500',
                           background: 'none',
                           border: 'none',
@@ -359,7 +358,7 @@ const SingleProduct = ({
                       <button 
                         onClick={() => setIsDescriptionExpanded(true)}
                         style={{
-                          color: '#ff6347',
+                          color: '#eab308',
                           fontWeight: '500',
                           background: 'none',
                           border: 'none',
@@ -403,7 +402,7 @@ const SingleProduct = ({
                 color: '#ffffff',
                 textAlign: 'center',
                 letterSpacing: '-0.025em',
-                borderBottom: '2px solid #ff6347',
+                borderBottom: '2px solid #eab308',
                 paddingBottom: '0.75rem',
                 textTransform: 'uppercase'
               }}>
@@ -469,7 +468,7 @@ const SingleProduct = ({
           {/* Selettore manico */}
           {selectedProduct.category === 'racchetta' && (
             <div className="variations-selectors-container">
-              <h2 className='text-2xl text-white'>Bilanciamento:</h2>
+              <div className='text-2xl text-white font-semibold mb-2'>Bilanciamento:</div>
               <label className="headline-small size-headline text-white">{selectedProduct.bilancio === 'piattocorde' ? 'Piatto Corde' :
               selectedProduct.bilancio === 'manico' ? 'Manico' : 'Bilanciato'}</label>
               <div className="size-container">
@@ -577,7 +576,6 @@ const SingleProduct = ({
         </div>
 
       </div>
-      <Footer></Footer>
     </>
   );
 };

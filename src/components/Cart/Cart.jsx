@@ -21,8 +21,8 @@ const Cart = () => {
     };
 
     const handleCheckout = () => {
-        // TODO: Implementare il checkout
-        console.log('Procedere al checkout');
+        dispatch(closeCart());
+        navigate('/checkout');
     };
 
     if (!isOpen) return null;

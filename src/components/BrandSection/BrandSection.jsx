@@ -5,9 +5,9 @@ import { categoryBanners } from '../../data/images';
 const BrandSection = ({ brand, products }) => {
   return (
     <>
-      <div className="flex justify-start mt-5 border-b-2 border-red-500 max-w-[830px] mx-auto">
-        <h1 className="font-semibold text-xl sm:text-3xl lg:text-4xl p-4">
-          Collezioni {brand}
+      <div className="flex justify-start mt-5 border-b-2 border-yellow-500 max-w-[830px] mx-auto">
+        <h1 className="font-graffiti text-xl sm:text-3xl lg:text-4xl p-4 transform hover:scale-105 transition-transform duration-300 text-white text-stroke-graffiti tracking-wider">
+          COLLEZIONE {brand.toUpperCase()}
         </h1>
       </div>
       <img

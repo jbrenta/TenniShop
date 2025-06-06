@@ -215,13 +215,13 @@ function Navbar() {
           </a>
         </Link>
         <Link to={"/profile"}>
-          <a
-            role="tab"
-            onClick={() => dispatch(moveToThree())}
+        <a
+          role="tab"
+          onClick={() => dispatch(moveToThree())}
             className={`tab ${tab === 3 ? 'text-white scale-105 border-b-2 border-yellow-500' : 'text-white hover:text-white'} transition-all duration-200`}
-          >
-            Info
-          </a>
+        >
+          Info
+        </a>
         </Link>
       </div>
     </>

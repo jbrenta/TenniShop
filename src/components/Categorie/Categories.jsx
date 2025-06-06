@@ -157,7 +157,7 @@ function Categories({
                     Promo
                   </div>
                 )}
-                <h2 className="card-title text-sm sm:text-base md:text-lg mb-1">{product.name}</h2>
+                <h2 className="card-title text-xl sm:text-2xl md:text-3xl mb-1">{product.name}</h2>
                 {product.promo ? (
                   <span className="inline-flex items-center gap-1 sm:gap-2 mb-1">
                     <p className="line-through text-gray-500 text-xs sm:text-sm">
@@ -171,7 +171,7 @@ function Categories({
                 <p className="text-xs text-white mb-2 line-clamp-2">{getFirst10Words(product.description)}</p>
                 <div className="card-actions w-full">
                   <button 
-                    className="btn btn-sm w-full bg-[rgb(255,72,39)] hover:bg-[rgb(230,65,35)] text-white border-none text-xs sm:text-sm" 
+                    className="btn btn-sm w-full bg-warning hover:bg-yellow-600 text-white border-none text-xs sm:text-sm" 
                     onClick={() => handleBuyNow(product)}
                   >
                     Acquista ora
@@ -216,7 +216,7 @@ function Categories({
                   Promo
                 </div>
               )}
-              <h2 className="card-title text-white text-lg mb-2">{slide.name}</h2>
+              <h2 className="card-title text-xl sm:text-2xl md:text-3xl mb-2">{slide.name}</h2>
               {slide.promo ? (
                 <span className="inline-flex items-center gap-2 mb-2">
                   <p className="line-through text-gray-400">
@@ -230,7 +230,7 @@ function Categories({
               <p className="text-sm text-gray-300 mb-4">{getFirst10Words(slide.description)}</p>
               <div className="card-actions w-full">
                 <button 
-                  className="btn bg-[rgb(255,72,39)] hover:bg-[rgb(230,65,35)] text-white border-none w-full"
+                  className="btn bg-warning hover:bg-yellow-600 text-white border-none w-full"
                   onClick={() => handleBuyNow(slide)}
                 >
                   Acquista ora
@@ -243,13 +243,13 @@ function Categories({
 
       {/* Navigation arrows */}
       <button
-        className="btn btn-circle absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-[rgb(255,72,39)] hover:bg-[rgb(230,65,35)] border-none"
+        className="btn btn-circle absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-warning hover:bg-yellow-600 border-none"
         onClick={handlePrev}
       >
         ❮
       </button>
       <button
-        className="btn btn-circle absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-[rgb(255,72,39)] hover:bg-[rgb(230,65,35)] border-none"
+        className="btn btn-circle absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-warning hover:bg-yellow-600 border-none"
         onClick={handleNext}
       >
         ❯

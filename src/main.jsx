@@ -9,6 +9,7 @@ import Layout from './components/Layout/Layout';
 import Home from './pages/Home/Home';
 import Prodotti from './pages/Prodotti/Prodotti';
 import Profile from './pages/Profile/Profile';
+import Checkout from './components/Checkout/Checkout';
 
 const router = createHashRouter([
   {
@@ -26,6 +27,10 @@ const router = createHashRouter([
       {
         path: 'profile',
         element: <Profile />
+      },
+      {
+        path: 'checkout',
+        element: <Checkout />
       }
     ]
   }

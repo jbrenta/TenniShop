@@ -21,7 +21,7 @@ export const brandLogos = {
   babolat: '/TenniShop/assets/imgprodotti/loghi/babolat.png',
   head: '/TenniShop/assets/imgprodotti/loghi/Head-Logo.jpg',
   nike: '/TenniShop/assets/imgprodotti/loghi/nike.jpg',
-  wilson: '/TenniShop/assets/imgprodotti/loghi/wilson.webp',
+  wilson: '/TenniShop/assets/imgprodotti/loghi/wilson.webp'
 };
 
 // Categories Banner Images

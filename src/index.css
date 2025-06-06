@@ -1,11 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  h1:not(.category-title) {
+    @apply font-['Amatic_SC'] font-bold text-[4.5em];
+  }
+  h2 {
+    @apply font-['Amatic_SC'] font-bold text-[2em];
+  }
+}
+
+@layer utilities {
+  .graffiti-glow {
+    text-shadow: 
+      0 0 5px rgba(255,255,255,0.8),
+      0 0 10px rgba(255,255,255,0.5),
+      3px 3px 0 #000,
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000,
+      4px 4px 8px rgba(0,0,0,0.5);
+  }
+}
+
 @layer components {
     /* NAVBAR */
-    .navbar{
-        @apply p-4 text-white px-1
+    .navbar {
+        @apply p-4 text-white px-1 bg-zinc-800;
+    }
+
+    /* Category Cards Title */
+    .category-title {
+        @apply text-2xl sm:text-3xl lg:text-4xl font-semibold;
+    }
+
+    /* Product Section Titles */
+    .product-section-container h2:not(.product-title) {
+        @apply font-['Amatic_SC'] font-bold text-[3em] !important;
     }
 
     /* Ensure navbar links stay white on mobile */

@@ -130,7 +130,7 @@ function Home() {
             <div className="absolute inset-0 bg-black opacity-40 group-hover:opacity-20 transition-opacity duration-300 z-10"></div>
             
             <div className="absolute top-0 left-0 right-0 p-3 lg:p-4 z-20">
-              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white tracking-wide break-words">
+              <h2 className="category-title text-white tracking-wide break-words transform hover:scale-105 transition-transform duration-300">
                 {key.charAt(0) + key.slice(1).toLowerCase()}
               </h2>
               <div className="h-0.5 lg:h-1 w-12 lg:w-16 bg-yellow-500 mt-2 lg:mt-3 rounded-full"></div>
@@ -165,7 +165,7 @@ function Home() {
       `}</style>
 
       {/* Recommended Products Section */}
-      <div className="flex justify-start mt-5 border-b-2 border-red-500 max-w-[830px] mx-auto">
+      <div className="flex justify-start mt-5 border-b-2 border-yellow-500 max-w-[830px] mx-auto">
         <h1 className="font-semibold text-xl sm:text-3xl lg:text-4xl p-4">
           CONSIGLIATO PER TE
         </h1>
@@ -181,20 +181,31 @@ function Home() {
       </div>
 
       {/* Brand Logos Section */}
-      <div className="flex justify-start mt-5 border-b-2 max-w-[830px] mx-auto">
-        <h1 className="font-semibold text-xl sm:text-3xl lg:text-4xl p-4">
-          TOP MARCHI
-        </h1>
+      <div className="relative mt-10 mb-8">
+        <div className="flex justify-start border-b-2 border-yellow-500 max-w-[830px] mx-auto">
+          <div className="relative group cursor-default">
+            <h1 className="text-white p-4">
+              TOP MARCHI
+            </h1>
+          </div>
+        </div>
       </div>
-      <div className="flex justify-center items-center gap-2 mx-auto mt-5 flex-wrap">
+
+      {/* Enhanced Brand Logos Grid */}
+      <div className="max-w-[1200px] mx-auto px-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mb-10">
         {Object.entries(BRANDS).map(([key, brand]) => (
-          <img
+          <div
             key={key}
-            src={brandLogos[key.toLowerCase()]}
-            alt={brand}
-            className="w-20 h-16 lg:w-32 lg:h-28 logo-gradient hover:scale-110 hover:opacity-75 transition-transform duration-300 ease-in-out cursor-pointer"
             onClick={() => goToProdottiConFiltro(null, brand)}
-          />
+            className="group relative bg-white p-6 cursor-pointer hover:shadow-lg transition-all duration-300 border-2 border-transparent hover:border-yellow-400"
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <img
+              src={brandLogos[key.toLowerCase()]}
+              alt={brand}
+              className="w-full h-20 object-contain transform group-hover:scale-110 transition-all duration-300"
+            />
+          </div>
         ))}
       </div>
 
@@ -211,15 +222,11 @@ function Home() {
         
         <div className="max-w-[1000px] mx-auto px-4">
           <div className="flex flex-col items-center text-center relative">
-            {/* Enhanced Title Section */}
-            <div className="mb-4 md:mb-12">
-              <h2 className="text-2xl md:text-4xl font-bold text-white mb-2 md:mb-4">
-                Offerta del Giorno
-                <div className="h-1 w-24 bg-yellow-400 mx-auto mt-2 md:mt-3 rounded-full"></div>
-              </h2>
-              <p className="text-xs md:text-base text-zinc-300 max-w-2xl mx-auto">
-                Approfitta di questa offerta esclusiva, disponibile solo per le prossime:
-              </p>
+            {/* Title Section */}
+            <div className="flex justify-start w-full max-w-[830px] mx-auto border-b-2 border-yellow-500 mb-8">
+              <h1 className="font-semibold text-xl sm:text-3xl lg:text-4xl p-4">
+                OFFERTA DEL GIORNO
+              </h1>
             </div>
 
             {/* Enhanced Countdown Timer */}
@@ -336,10 +343,9 @@ function Home() {
       <div className="bg-zinc-800 py-8 md:py-16 mt-6 md:mt-10">
         <div className="max-w-[900px] mx-auto px-4">
           <div className="text-center mb-10">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+            <h1 className="text-yellow-400 mb-4">
               I Nostri Numeri
-              <div className="h-1 w-24 bg-yellow-400 mx-auto mt-3 rounded-full"></div>
-            </h2>
+            </h1>
             <p className="text-zinc-400 text-xs md:text-sm">Scopri i risultati che abbiamo raggiunto insieme</p>
           </div>
 
@@ -403,10 +409,9 @@ function Home() {
       <div className="bg-zinc-900 py-8 md:py-16 mt-6 md:mt-10">
         <div className="max-w-[900px] mx-auto px-4">
           <div className="text-center mb-6 md:mb-10">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+            <h1 className="text-yellow-400 mb-4">
               Perché Sceglierci
-              <div className="h-1 w-24 bg-yellow-400 mx-auto mt-3 rounded-full"></div>
-            </h2>
+            </h1>
             <p className="text-zinc-400 text-xs md:text-sm">I vantaggi di acquistare da noi</p>
           </div>
 
