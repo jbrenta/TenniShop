@@ -166,8 +166,8 @@ function Home() {
 
       {/* Recommended Products Section */}
       <div className="flex justify-start mt-5 border-b-2 border-yellow-500 max-w-[830px] mx-auto">
-        <h1 className="font-semibold text-xxs sm:text-md lg:text-2xl p-4">
-          CONSIGLIATO PER TE
+        <h1 className="font-semibold text-xxs sm:text-md lg:text-2xl p-4 whitespace-nowrap overflow-hidden text-ellipsis">
+          CONSIGLIATI PER TE
         </h1>
       </div>
 
