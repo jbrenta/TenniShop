@@ -6,7 +6,7 @@
 
 @layer base {
   h1:not(.category-title) {
-    @apply font-['Amatic_SC'] font-bold text-[4.5em];
+    @apply font-['Amatic_SC'] font-bold text-[3em];
   }
   h2 {
     @apply font-['Amatic_SC'] font-bold text-[2em];

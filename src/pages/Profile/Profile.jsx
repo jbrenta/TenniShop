@@ -1,5 +1,4 @@
 import React from 'react';
-import Footer from '../../components/Footer/Footer';
 
 const Profile = () => {
     // Esempio di dati utente (in un'app reale questi dati verrebbero da un backend)
@@ -101,8 +100,7 @@ const Profile = () => {
                 </div>
             </div>
         </div>
-          <Footer></Footer>
-          </>
+        </>
     );
 };
 

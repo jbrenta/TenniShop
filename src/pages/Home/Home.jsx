@@ -144,7 +144,7 @@ function Home() {
               />
             </figure>
             
-            <div className="absolute bottom-0 left-0 right-0 p-3 lg:p-4 bg-gradient-to-t from-black/80 to-transparent z-20">
+            <div className="absolute bottom-0 left-0 right-0 p-3 lg:p-4 bg-gradient-to-t from-black/80 to-transparent z-[5]">
               <button className="w-full py-2 lg:py-2.5 px-3 lg:px-4 bg-yellow-500 text-black text-sm lg:text-base font-semibold rounded-lg opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
                 Scopri di più
               </button>

@@ -63,7 +63,7 @@ const Carousel = () => {
                     {/* CTA Button */}
                     <button 
                         onClick={goToOfferte}
-                        className="glass bg-gradient-to-r from-yellow-500 via-yellow-600 to-yellow-500 hover:from-yellow-600 hover:via-yellow-500 hover:to-yellow-600 text-white font-bold text-sm sm:text-base md:text-lg py-2 sm:py-3 px-3 sm:px-6 rounded-lg sm:rounded-xl w-32 sm:w-40 md:w-48 lg:w-56 absolute bottom-4 sm:bottom-6 md:bottom-8 right-4 sm:right-6 md:right-8 z-50 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-1 sm:gap-2 group backdrop-blur-sm"
+                        className="glass bg-gradient-to-r from-yellow-500 via-yellow-600 to-yellow-500 hover:from-yellow-600 hover:via-yellow-500 hover:to-yellow-600 text-white font-bold text-sm sm:text-base md:text-lg py-2 sm:py-3 px-3 sm:px-6 rounded-lg sm:rounded-xl w-32 sm:w-40 md:w-48 lg:w-56 absolute bottom-4 sm:bottom-6 md:bottom-8 right-4 sm:right-6 md:right-8 z-10 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-1 sm:gap-2 group backdrop-blur-sm"
                     >
                         <span className="group-hover:translate-x-1 transition-transform duration-200 whitespace-nowrap">
                             Scopri Offerte
