@@ -123,6 +123,7 @@ const SingleProduct = ({
             flexDirection: 'column',
             alignItems: 'center',
             maxWidth: '100%'
+            
           }}>
             {/* Contenitore immagine con stile consistente */}
             <div className="product-section-container" style={{
@@ -169,6 +170,7 @@ const SingleProduct = ({
                       boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
                       backgroundColor: '#fff',
                       zIndex: 2,
+                      
                     }}
                   >
                     <div
@@ -461,7 +463,7 @@ const SingleProduct = ({
                   <span> -24%</span>
                 </span>
               )}
-              <span className="value real-price">€{selectedProduct.price.toFixed(2)}</span>
+              <span className="value real-price text-xl">€{selectedProduct.price.toFixed(2)}</span>
             </div>
           </div>
 

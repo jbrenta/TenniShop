@@ -219,7 +219,7 @@
 }
 
 .real-price {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 600;
   color: #ffffff;
 }
@@ -865,10 +865,13 @@
 
 .similar-products-container .card .card-body {
   color: #ffffff !important;
+  padding: 1rem;
+  text-align: center;
 }
 
-.similar-products-container .card .card-body p {
-  color: #ffffff !important;
+.similar-products-container .card .card-body .card-title {
+  font-size: 0.75rem;
+  line-height: 1.2;
 }
 
 /* Stili per la descrizione del prodotto principale */
@@ -1754,5 +1757,43 @@
   
   .product-title-header {
     padding: 1rem;
+  }
+}
+
+.similar-products-container .card .card-body .card-title {
+  font-size: 0.75rem;
+  line-height: 1.2;
+}
+
+@media (max-width: 480px) {
+  .similar-products-container .card .card-body .card-title {
+    font-size: 0.625rem;
+    line-height: 1.1;
+  }
+}
+
+@media (max-width: 380px) {
+  .similar-products-container .card .card-body .card-title {
+    font-size: 0.5rem;
+    line-height: 1;
+    padding: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .real-price {
+    font-size: 1.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .real-price {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .real-price {
+    font-size: 1.625rem;
   }
 } 

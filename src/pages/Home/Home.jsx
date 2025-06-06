@@ -166,7 +166,7 @@ function Home() {
 
       {/* Recommended Products Section */}
       <div className="flex justify-start mt-5 border-b-2 border-yellow-500 max-w-[830px] mx-auto">
-        <h1 className="font-semibold text-xl sm:text-3xl lg:text-4xl p-4">
+        <h1 className="font-semibold text-xxs sm:text-md lg:text-2xl p-4">
           CONSIGLIATO PER TE
         </h1>
       </div>
@@ -224,7 +224,7 @@ function Home() {
           <div className="flex flex-col items-center text-center relative">
             {/* Title Section */}
             <div className="flex justify-start w-full max-w-[830px] mx-auto border-b-2 border-yellow-500 mb-8">
-              <h1 className="font-semibold text-xl sm:text-3xl lg:text-4xl p-4">
+              <h1 className="font-semibold text-xxs sm:text-md lg:text-2xl p-4">
                 OFFERTA DEL GIORNO
               </h1>
             </div>
@@ -475,10 +475,10 @@ function Home() {
       <div className="bg-zinc-800 py-8 md:py-16 mt-6 md:mt-10">
         <div className="max-w-[600px] mx-auto px-4">
           <div className="text-center mb-6 md:mb-10">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
               Contattaci
               <div className="h-1 w-24 bg-yellow-400 mx-auto mt-3 rounded-full"></div>
-            </h2>
+            </h1>
             <p className="text-zinc-400 text-xs md:text-sm">Siamo qui per aiutarti</p>
           </div>
           
