@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from "react-redux";
 
 // Components
 import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
 import Categories from "../../components/Categorie/Categories";
 import PromoCard from '../../components/PromoCard/PromoCard';
 import ProductCard from '../../components/ProductCard/ProductCard';
@@ -46,7 +45,7 @@ function Home() {
   
   // Custom hooks
   const counter = useCountdown();
-  
+
   /**
    * Banner Carousel Effect
    * Automatically cycles through banner images every 3 seconds
@@ -172,12 +171,12 @@ function Home() {
       </div>
 
       <div onWheel={preventVerticalScroll}>
-        <Categories
-          prodotti={products}
-          limit={12}
-          useCarousel={true}
-          responsive={true}
-        />
+      <Categories
+        prodotti={products}
+        limit={12}
+        useCarousel={true}
+        responsive={true}
+      />
       </div>
 
       {/* Brand Logos Section */}
@@ -185,8 +184,8 @@ function Home() {
         <div className="flex justify-start border-b-2 border-yellow-500 max-w-[830px] mx-auto">
           <div className="relative group cursor-default">
             <h1 className="text-white p-4">
-              TOP MARCHI
-            </h1>
+          TOP MARCHI
+        </h1>
           </div>
         </div>
       </div>
@@ -204,7 +203,7 @@ function Home() {
               src={brandLogos[key.toLowerCase()]}
               alt={brand}
               className="w-full h-20 object-contain transform group-hover:scale-110 transition-all duration-300"
-            />
+          />
           </div>
         ))}
       </div>
@@ -225,8 +224,8 @@ function Home() {
             {/* Title Section */}
             <div className="flex justify-start w-full max-w-[830px] mx-auto border-b-2 border-yellow-500 mb-8">
               <h1 className="font-semibold text-xxs sm:text-md lg:text-2xl p-4">
-                OFFERTA DEL GIORNO
-              </h1>
+              OFFERTA DEL GIORNO
+            </h1>
             </div>
 
             {/* Enhanced Countdown Timer */}
@@ -256,11 +255,11 @@ function Home() {
                   <div className="w-[50%] sm:w-[60%] md:w-1/2 relative group">
                     <div className="absolute inset-0 bg-gradient-to-tr from-yellow-500/10 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div className="relative overflow-hidden rounded-xl">
-                      <img
-                        src={randomPromoSlides[0].image}
-                        alt={randomPromoSlides[0].name}
+                    <img
+                      src={randomPromoSlides[0].image}
+                      alt={randomPromoSlides[0].name}
                         className="w-full h-auto rounded-xl shadow-lg transform group-hover:scale-105 transition-transform duration-500"
-                      />
+                    />
                       {/* Discount Badge */}
                       <div className="absolute top-2 right-2 md:top-3 md:right-3 bg-yellow-500 text-black text-[10px] md:text-sm font-bold px-2 md:px-3 py-1 md:py-1.5 rounded-full shadow-lg">
                         -20%
@@ -275,19 +274,19 @@ function Home() {
                         {randomPromoSlides[0].brand}
                       </p>
                       <h3 className="text-lg md:text-2xl font-bold text-white">
-                        {randomPromoSlides[0].name}
-                      </h3>
+                      {randomPromoSlides[0].name}
+                    </h3>
                     </div>
 
                     {/* Price Section */}
                     <div className="space-y-1 md:space-y-2">
                       <div className="flex items-baseline gap-2 md:gap-3">
                         <span className="text-xl md:text-3xl font-bold text-white">
-                          €{(randomPromoSlides[0].price * 0.8).toFixed(2)}
-                        </span>
+                        €{(randomPromoSlides[0].price * 0.8).toFixed(2)}
+                      </span>
                         <span className="text-sm md:text-lg text-zinc-500 line-through">
-                          €{randomPromoSlides[0].price.toFixed(2)}
-                        </span>
+                        €{randomPromoSlides[0].price.toFixed(2)}
+                      </span>
                       </div>
                       <p className="text-xs md:text-sm text-zinc-400">
                         Risparmi: €{(randomPromoSlides[0].price * 0.2).toFixed(2)}
@@ -344,19 +343,19 @@ function Home() {
         <div className="max-w-[900px] mx-auto px-4">
           <div className="text-center mb-10">
             <h1 className="text-yellow-400 mb-4">
-              I Nostri Numeri
+            I Nostri Numeri
             </h1>
             <p className="text-zinc-400 text-xs md:text-sm">Scopri i risultati che abbiamo raggiunto insieme</p>
           </div>
-
+          
           <div className="flex flex-col md:flex-row items-center justify-between relative">
             {/* Spedizioni */}
             <div className="w-full md:w-auto mb-6 md:mb-0 relative">
               <div className="flex flex-col items-center">
                 <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-zinc-900 border-2 md:border-4 border-zinc-800 shadow-lg flex items-center justify-center mb-3 md:mb-4 relative z-10">
                   <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 md:w-8 md:h-8 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
                 </div>
                 <div className="text-2xl md:text-4xl font-bold text-white mb-0.5 md:mb-1">310K</div>
                 <div className="text-yellow-400 font-medium text-sm md:text-base">Spedizioni</div>
@@ -369,9 +368,9 @@ function Home() {
               <div className="flex flex-col items-center">
                 <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-zinc-900 border-2 md:border-4 border-zinc-800 shadow-lg flex items-center justify-center mb-3 md:mb-4 relative z-10">
                   <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 md:w-8 md:h-8 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
-                  </svg>
-                </div>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                </svg>
+              </div>
                 <div className="text-2xl md:text-4xl font-bold text-white mb-0.5 md:mb-1">105.2K</div>
                 <div className="text-yellow-400 font-medium text-sm md:text-base">Clienti Attivi</div>
                 <div className="flex items-center justify-center text-zinc-400 text-xs md:text-sm mt-0.5 md:mt-1">
@@ -388,9 +387,9 @@ function Home() {
               <div className="flex flex-col items-center">
                 <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-zinc-900 border-2 md:border-4 border-zinc-800 shadow-lg flex items-center justify-center mb-3 md:mb-4 relative z-10">
                   <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 md:w-8 md:h-8 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
-                  </svg>
-                </div>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+                </svg>
+              </div>
                 <div className="text-2xl md:text-4xl font-bold text-white mb-0.5 md:mb-1">1.2K</div>
                 <div className="text-yellow-400 font-medium text-sm md:text-base">Nuovi Clienti</div>
                 <div className="flex items-center justify-center text-zinc-400 text-xs md:text-sm mt-0.5 md:mt-1">
@@ -411,23 +410,23 @@ function Home() {
           <div className="text-center mb-6 md:mb-10">
             <h1 className="text-yellow-400 mb-4">
               Perché Sceglierci
-            </h1>
+        </h1>
             <p className="text-zinc-400 text-xs md:text-sm">I vantaggi di acquistare da noi</p>
-          </div>
+      </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-            {/* Vantaggi */}
+        {/* Vantaggi */}
             <div className="bg-zinc-800 p-4 md:p-5 rounded-lg hover:bg-zinc-800/80 transition-all duration-300 border border-zinc-700">
               <div className="text-yellow-400 mb-3 md:mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                 </svg>
-              </div>
+          </div>
               <h3 className="text-white text-sm md:text-base font-medium mb-2">Vantaggi Esclusivi</h3>
               <p className="text-zinc-400 text-xs md:text-sm">
                 Offerte speciali e sconti dedicati ai nostri clienti.
               </p>
-            </div>
+        </div>
 
             {/* Spedizione */}
             <div className="bg-zinc-800 p-4 md:p-5 rounded-lg hover:bg-zinc-800/80 transition-all duration-300 border border-zinc-700">
@@ -435,25 +434,25 @@ function Home() {
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
                 </svg>
-              </div>
+          </div>
               <h3 className="text-white text-sm md:text-base font-medium mb-2">Spedizione GRATIS</h3>
               <p className="text-zinc-400 text-xs md:text-sm">
                 Consegna gratuita per ordini sopra €50.
               </p>
-            </div>
+        </div>
 
-            {/* Rimborso */}
+        {/* Rimborso */}
             <div className="bg-zinc-800 p-4 md:p-5 rounded-lg hover:bg-zinc-800/80 transition-all duration-300 border border-zinc-700">
               <div className="text-yellow-400 mb-3 md:mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 15v-1a4 4 0 00-4-4H8m0 0l3 3m-3-3l3-3" />
                 </svg>
-              </div>
+          </div>
               <h3 className="text-white text-sm md:text-base font-medium mb-2">Rimborso Garantito</h3>
               <p className="text-zinc-400 text-xs md:text-sm">
                 30 giorni di garanzia su tutti i prodotti.
               </p>
-            </div>
+        </div>
 
             {/* Sicurezza */}
             <div className="bg-zinc-800 p-4 md:p-5 rounded-lg hover:bg-zinc-800/80 transition-all duration-300 border border-zinc-700">
@@ -478,7 +477,7 @@ function Home() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
               Contattaci
               <div className="h-1 w-24 bg-yellow-400 mx-auto mt-3 rounded-full"></div>
-            </h1>
+      </h1>
             <p className="text-zinc-400 text-xs md:text-sm">Siamo qui per aiutarti</p>
           </div>
           
@@ -488,22 +487,22 @@ function Home() {
                 <div className="space-y-1.5 md:space-y-2">
                   <label className="block text-xs md:text-sm font-medium text-white">Nome</label>
                   <div className="relative">
-                    <input 
-                      type="text" 
+        <input
+          type="text"
                       placeholder="Il tuo nome" 
                       className="w-full px-3 md:px-4 py-2 md:py-2.5 bg-zinc-800 border border-zinc-600 focus:border-yellow-400 rounded-lg text-white placeholder-zinc-500 text-xs md:text-sm transition-colors"
-                    />
+        />
                   </div>
                 </div>
                 
                 <div className="space-y-1.5 md:space-y-2">
                   <label className="block text-xs md:text-sm font-medium text-white">Email</label>
                   <div className="relative">
-                    <input 
+        <input
                       type="email" 
                       placeholder="La tua email" 
                       className="w-full px-3 md:px-4 py-2 md:py-2.5 bg-zinc-800 border border-zinc-600 focus:border-yellow-400 rounded-lg text-white placeholder-zinc-500 text-xs md:text-sm transition-colors"
-                    />
+        />
                   </div>
                 </div>
               </div>
@@ -511,14 +510,14 @@ function Home() {
               <div className="space-y-1.5 md:space-y-2">
                 <label className="block text-xs md:text-sm font-medium text-white">Oggetto</label>
                 <div className="relative">
-                  <input 
-                    type="text" 
+        <input
+          type="text"
                     placeholder="Oggetto del messaggio" 
                     className="w-full px-3 md:px-4 py-2 md:py-2.5 bg-zinc-800 border border-zinc-600 focus:border-yellow-400 rounded-lg text-white placeholder-zinc-500 text-xs md:text-sm transition-colors"
-                  />
+        />
                 </div>
               </div>
-              
+
               <div className="space-y-1.5 md:space-y-2">
                 <label className="block text-xs md:text-sm font-medium text-white">Messaggio</label>
                 <div className="relative">
@@ -528,22 +527,20 @@ function Home() {
                     className="w-full px-3 md:px-4 py-2 md:py-2.5 bg-zinc-800 border border-zinc-600 focus:border-yellow-400 rounded-lg text-white placeholder-zinc-500 text-xs md:text-sm transition-colors resize-none"
                   ></textarea>
                 </div>
-              </div>
-              
+        </div>
+
               <div className="pt-2">
                 <button 
                   type="submit" 
                   className="w-full px-4 md:px-6 py-2.5 md:py-3 bg-yellow-400 hover:bg-yellow-500 text-black font-medium rounded-lg text-xs md:text-sm transition-colors"
                 >
                   Invia Messaggio
-                </button>
+        </button>
               </div>
             </form>
           </div>
         </div>
       </div>
-
-      <Footer />
     </>
   );
 }

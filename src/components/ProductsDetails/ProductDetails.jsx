@@ -146,17 +146,17 @@ useEffect(() => {
           </label>
 
               {/* Ordina dropdown */}
-              <div className="dropdown dropdown-bottom">
+              <div className="dropdown dropdown-bottom dropdown-end">
                 <div tabIndex={0} role="button" className="btn bg-zinc-800 hover:bg-zinc-700 text-white border-none">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 4h13M3 8h9m-9 4h9m5-4v12m0 0l-4-4m4 4l4-4" />
                   </svg>
                   Ordina
-            </div>
-            <ul
-              tabIndex={0}
-                  className="dropdown-content menu bg-zinc-800 rounded-xl z-[1] w-56 p-3 shadow-xl border border-zinc-700"
-            >
+                </div>
+                <ul
+                  tabIndex={0}
+                  className="dropdown-content menu bg-zinc-800 rounded-xl z-[1] w-48 sm:w-56 p-3 shadow-xl border border-zinc-700"
+                >
                   <li className="mb-1">
                     <button onClick={handleSortLowToHigh} className="text-zinc-200 hover:text-yellow-400 hover:bg-zinc-700 rounded-lg transition-colors duration-200">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
